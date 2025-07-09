@@ -119,7 +119,7 @@ section { padding: 100px 0; overflow: hidden; }
 /* --- ESTILO DO BANNER DE COOKIES --- */
 #cookie-banner {
     position: fixed;
-    bottom: -150px; /* Começa escondido para baixo */
+    bottom: -300px; /* Aumentado para garantir que fique fora da tela */
     left: 0;
     width: 100%;
     background-color: var(--preto-suave);
@@ -132,6 +132,7 @@ section { padding: 100px 0; overflow: hidden; }
     z-index: 5000;
     transition: bottom 0.5s ease-in-out;
 }
+
 
 #cookie-banner.is-visible {
     bottom: 0; /* Aparece deslizando para cima */
