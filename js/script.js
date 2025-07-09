@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Criatividade', class: 'text-gradient-green' },
             { text: 'Respeito', class: 'text-gradient-blue' },
             { text: 'Inovação', class: 'text-gradient-purple' },
-            { text: 'Compromisso', class: 'text-gradient-green' }
+            { text: 'Conexão', class: 'text-gradient-green' }
         ];
         let wordIndex = 0;
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('game-modal');
     const modalImg = document.getElementById('modal-img');
     const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-desc'); // Adicionado
+    const modalDesc = document.getElementById('modal-desc');
     const infoButtons = document.querySelectorAll('.info-button');
     const closeButton = document.querySelector('.close-button');
     const prevArrow = document.querySelector('.carousel-arrow.prev');
@@ -75,18 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = card.querySelector('h3').textContent;
             const gameId = card.dataset.gameId;
             const imageCount = parseInt(card.dataset.imageCount, 10);
-            const description = card.dataset.desc; // Pega a descrição
+            const description = card.dataset.desc;
 
             currentGallery = [];
             for (let i = 1; i <= imageCount; i++) {
-                // Se o jogo for placeholder, usa a imagem genérica.
                 const imageName = card.classList.contains('is-placeholder') ? 'placeholder-game.png' : `${gameId}_${i}.png`;
                 currentGallery.push(`assets/images/${imageName}`);
             }
             
             currentImageIndex = 0;
             modalTitle.textContent = title;
-            modalDesc.textContent = description; // Define a descrição
+            modalDesc.textContent = description;
             updateModalImage();
             
             const showArrows = currentGallery.length > 1;
@@ -102,4 +101,29 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', (event) => { if (event.target == modal) closeModal(); });
     nextArrow.addEventListener('click', () => { currentImageIndex = (currentImageIndex + 1) % currentGallery.length; updateModalImage(); });
     prevArrow.addEventListener('click', () => { currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length; updateModalImage(); });
+
+    // --- FUNCIONALIDADE DO BANNER DE COOKIES ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookieBtn = document.getElementById('cookie-accept-btn');
+
+    const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    };
+    
+    if (!getCookie('konectomi_cookie_consent')) {
+        setTimeout(() => {
+            cookieBanner.classList.add('is-visible');
+        }, 1500);
+    }
+
+    acceptCookieBtn.addEventListener('click', () => {
+        const expiryDate = new Date();
+        expiryDate.setDate(expiryDate.getDate() + 365);
+        
+        document.cookie = `konectomi_cookie_consent=true;path=/;expires=${expiryDate.toUTCString()}`;
+        cookieBanner.classList.remove('is-visible');
+    });
+
 });
