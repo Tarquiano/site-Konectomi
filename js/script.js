@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (countdownTopContainer) {
         
         // --- CONFIGURAÇÕES DO EVENTO ---
-        const eventDate = new Date('September 16, 2025 15:00:00 GMT-0300').getTime();
+        const eventDate = new Date('September 13, 2025 15:00:00 GMT-0300').getTime();
         const gameLink = "https://www.roblox.com/pt/games/74975667191920/Centro-de-eventos";
         
         // --- ELEMENTOS DO TOPO ---
