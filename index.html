@@ -11,7 +11,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9R7ZQSNZ2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-T9R7ZQSNZ2');
+    </script>
+
+
+    <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 
 <body>
@@ -26,6 +37,13 @@
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#jogos">Jogos</a></li>
+                    <li>
+                        <a href="konectomicon.html" class="nav-event-link">
+                            <span class="nav-event-konectomi">Konectomi</span>
+                            <span class="nav-event-con">Con</span>
+                            <span class="nav-event-2025">2025</span>
+                        </a>
+                    </li>
                     <li><a href="#comunidade">Comunidade</a></li>
                     <li><a href="#carreiras">Carreiras</a></li>
                     <li><a href="https://docs.google.com/document/d/15Gqth813QQyTgHP0mtML6a56NdkGXRkiyHXGRo4BItI/edit?usp=sharing"
@@ -51,7 +69,7 @@
             <div class="hero-content fade-in">
                 <h1 class="main-title">Criamos com <span id="rotating-text"
                         class="text-gradient-green">Criatividade</span></h1>
-                <p class="subtitle">Conectando pessoas para momentos de diversão, amizade e tranquilidade.</p>
+                <p class="subtitle">Conectando jogadores em experiências que divertem e aproximam.</p>
                 <a href="#sobre" class="cta-button">
                     Explore nosso universo
                     <img src="assets/icons/arrow-down.svg" alt="" class="cta-arrow">
@@ -63,8 +81,8 @@
             <div class="container fade-in">
                 <h2 class="section-title">Sobre a Konectomi</h2>
                 <p>A Konectomi nasceu com uma ideia simples: criar experiências que realmente prendem a atenção dos
-                    jogadores. Trabalhamos com jogos no Roblox e projetos web, sempre buscando fazer algo imersivo,
-                    divertido e cheio de personalidade</p>
+                    jogadores. Somos focados em jogos no Roblox e experiências interativas, sempre com muita
+                    criatividade e personalidade</p>
             </div>
         </section>
 
@@ -89,7 +107,7 @@
                             <h3>Belopavi Park</h3><button class="info-button"><img src="assets/icons/info.svg"></button>
                         </div>
                     </div>
-                    <!-- Jogo 3: Belopavi Resort - MUDANÇA APLICADA AQUI -->
+                    <!-- Jogo 3 -->
                     <div class="game-card fade-in" data-game-id="belopavi-resort" data-image-count="3"
                         data-desc="Relaxe e aproveite uma estadia de luxo em nosso resort exclusivo. Piscinas, atividades e muito mais esperam por você.">
                         <img src="assets/images/belopavi-resort_1.png" alt="Belopavi Resort">
@@ -98,7 +116,7 @@
                                     src="assets/icons/info.svg"></button>
                         </div>
                     </div>
-                    <!-- Jogo 4: Belopavi Restaurant - MUDANÇA APLICADA AQUI -->
+                    <!-- Jogo 4 -->
                     <div class="game-card fade-in" data-game-id="belopavi-restaurant" data-image-count="3"
                         data-desc="Uma experiência gastronômica única. Prepare pratos, sirva clientes e gerencie seu próprio restaurante de alta classe.">
                         <img src="assets/images/belopavi-restaurant_1.png" alt="Belopavi Restaurant">
@@ -150,12 +168,37 @@
             </div>
         </section>
 
-        <section id="comunidade" class="community-section">
+        <section id="evento-konectomicon" class="learning-section">
             <div class="container fade-in">
-                <h2 class="section-title">Junte-se à KRPC</h2>
-                <p>A KRPC é mais que uma comunidade, é um espaço colaborativo para jogadores para quem quer fazer parte de uma comunidade ativa e acolhedora. Participe
+                <div class="learning-content">
+                    <div class="learning-image">
+                        <img src="assets/images/event-atmosphere.jpg" alt="Banner da Konectomi Con 2025">
+                    </div>
+                    <div class="learning-text">
+                        <h2 class="event-title-section">
+                            <span class="nav-event-konectomi">Konectomi</span>
+                            <span class="nav-event-con">Con</span>
+                            <span class="nav-event-2025">2025</span>
+                        </h2>
+                        <p><strong>Prepare-se para o maior momento da Konectomi!</strong>
+                            A Konectomi Con é um evento digital gratuito, repleto de anúncios, novidades e surpresas
+                            para toda a comunidade. Vem com a gente viver essa experiência única!</p>
+                        <a href="konectomicon.html" class="cta-button">Saiba Mais e Programe-se</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DA COMUNIDADE COM O NOVO BACKGROUND -->
+        <section id="comunidade" class="final-cta-section"> <!-- Classe alterada aqui -->
+            <div class="container fade-in">
+                <h2 class="section-title" style="color: var(--branco-base);">Junte-se à KRPC</h2>
+                <!-- Cor do título ajustada -->
+                <p>A KRPC é mais que uma comunidade, é um espaço colaborativo para jogadores para quem quer fazer parte
+                    de uma comunidade ativa e acolhedora. Participe
                     de eventos exclusivos, roleplay privado e cresça em um ambiente amigável.</p>
-                <a href="https://forms.gle/1WZ6fuoDbEmpFiJF7" target="_blank" class="cta-button">Entrar na Comunidade</a>
+                <a href="https://forms.gle/1WZ6fuoDbEmpFiJF7" target="_blank" class="cta-button">Entrar na
+                    Comunidade</a>
             </div>
         </section>
 
@@ -170,7 +213,6 @@
                         <p>Iluminar mentes com criatividade. Nossa divisão educacional transforma o aprendizado em uma
                             aventura interativa dentro do Roblox, com cursos de tecnologia, música e mais.</p>
                         <p>Em breve</p>
-                        <!-- Jogo 6 -- <a href="#" class="learn-more-link">Explore nossos cursos</a>> -->
                     </div>
                 </div>
             </div>
@@ -184,7 +226,7 @@
                         <img src="assets/images/konectomi-team.jpg" alt="Time Konectomi">
                     </div>
                     <div class="team-text">
-                        <h3>Jogos conduzidos por pessoas, para uma experiência real e interativa.</h3>
+                        <h3>Experiências reais, conduzidas por pessoas.</h3>
                         <p>Nosso modelo de jogo é inspirado em experiências reais, comuns em jogos dos EUA, onde a
                             operação é feita manualmente por pessoas. Diferente de sistemas automáticos, aqui a equipe e
                             os jogadores gerenciam tudo ao vivo — desde companhias aéreas até cafés — garantindo mais
@@ -210,9 +252,9 @@
                 <div class="careers-content">
                     <div class="careers-text">
                         <h2>Faça Parte da Equipe</h2>
-                        <p>Se você quer construir o futuro dos jogos e da web, seu lugar é aqui. Estamos sempre em busca
-                            de talentos para se juntarem à nossa missão.</p>
-                        <a href="https://forms.gle/qXHyB8ZfTQjpY2q68" target="_blank" class="cta-button">Ver Vagas Abertas</a>
+                        <p>Se você quer fazer parte de uma equipe dedicada a construir uma comunidade forte e inovadora,
+                            seu lugar é aqui. Estamos sempre em busca de talentos para somar na nossa missão.</p>
+                        <a href="https://forms.gle/qXHyB8ZfTQjpY2q68" target="_blank" class="cta-button">Formulário</a>
                     </div>
                     <div class="careers-image">
                         <img src="assets/images/placeholder-careers.jpg" alt="Junte-se ao time Konectomi">
@@ -265,12 +307,30 @@
             <p id="modal-desc"></p>
         </div>
     </div>
+
+    <div id="event-popup" class="modal">
+        <div class="event-popup-content">
+            <span id="event-popup-close" class="close-button">×</span>
+            <img src="assets/icons/calendar-event.svg" alt="Ícone de Evento" class="event-popup-icon">
+            <div class="event-popup-title">
+                <span class="nav-event-konectomi">Konectomi</span>
+                <span class="nav-event-con">Con</span>
+                <span class="nav-event-2025">2025</span>
+            </div>
+            <p>O maior evento da Konectomi está chegando! Prepare-se para anúncios exclusivos, lançamento de jogos e
+                muitas surpresas.</p>
+            <a href="konectomicon.html" class="cta-button">Ver Página do Evento</a>
+        </div>
+    </div>
+
+
     <div id="cookie-banner">
         <p>Nós usamos cookies para garantir que você tenha a melhor experiência em nosso site. Ao continuar, você
             concorda com nosso uso.</p>
         <button id="cookie-accept-btn">Entendi</button>
     </div>
-    <script src="js/script.js?v=2"></script>
+
+    <script src="js/script.js?v=3"></script>
 </body>
 
 </html>
