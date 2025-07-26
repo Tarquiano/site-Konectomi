@@ -255,16 +255,16 @@ section { padding: 100px 0; overflow: hidden; }
 }
 
 /* ============================================== */
-/* === ESTILOS DA PÁGINA DE EVENTO (KONECTOMICON) === */
+/* === ESTILOS DA PÁGINA DE EVENTO (KONECTOMICON) - VERSÃO FINAL CORRIGIDA === */
 /* ============================================== */
 
 .event-hero {
-    height: 100vh; /* Alterado para 100vh para ocupar a tela inteira */
+    height: 100vh;
     min-height: 700px;
     background: url('../assets/images/event-banner.jpg') no-repeat center center/cover;
     position: relative;
     display: flex;
-    flex-direction: column; /* Para alinhar a seta embaixo */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -285,7 +285,6 @@ section { padding: 100px 0; overflow: hidden; }
     animation: fadeInHero 1s ease-out;
 }
 
-/* NOVO: Estilo para a seta de rolagem */
 .scroll-down-arrow {
     position: absolute;
     bottom: 30px;
@@ -348,7 +347,6 @@ section { padding: 100px 0; overflow: hidden; }
     border-radius: 10px;
     line-height: 1;
     min-width: 110px;
-    
     opacity: 1;
     transform: translateY(0);
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
@@ -358,7 +356,6 @@ section { padding: 100px 0; overflow: hidden; }
     transform: translateY(-100%);
     opacity: 0;
 }
-
 
 .timer-label {
     font-size: 0.9rem;
@@ -425,6 +422,10 @@ section { padding: 100px 0; overflow: hidden; }
 .event-details-text { flex: 1; }
 .event-details-image { flex: 1; }
 
+.bottom-actions-wrapper {
+    margin-top: 40px;
+}
+
 .event-details-image img {
     width: 100%;
     border-radius: 20px;
@@ -432,10 +433,21 @@ section { padding: 100px 0; overflow: hidden; }
 }
 
 @media (max-width: 768px) {
-    .event-hero { height: auto; min-height: 100vh; padding: 120px 20px 80px; } /* Aumenta o padding inferior */
+    .event-hero { height: auto; min-height: 100vh; padding: 120px 20px 80px; }
     .event-title { font-size: 3rem; }
     #countdown-timer { gap: 10px; }
-    .timer-number { font-size: 2.5rem; min-width: 75px; padding: 10px 15px;}
+    
+    /* AJUSTE PARA O TIMER FLEXÍVEL */
+    .timer-unit {
+        flex: 1; /* Faz cada unidade ocupar o espaço disponível igualmente */
+        text-align: center;
+    }
+    .timer-number { 
+        font-size: 2.5rem; 
+        min-width: 0; /* Remove a largura mínima que causava o overflow */
+        padding: 10px 5px; /* Reduz o padding horizontal para caber melhor */
+    }
+    
     .timer-label { font-size: 0.7rem; }
     .event-details-content { flex-direction: column; }
 }
