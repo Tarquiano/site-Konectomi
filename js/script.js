@@ -99,12 +99,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const eventPopup = document.getElementById('event-popup');
     if (eventPopup) {
         const eventPopupClose = document.getElementById('event-popup-close');
-        if (!sessionStorage.getItem('eventPopupShown')) {
-            setTimeout(() => {
-                eventPopup.style.display = 'flex';
-                sessionStorage.setItem('eventPopupShown', 'true');
-            }, 2500);
+
+        // Mostrar o popup apenas entre 25 de dezembro de 2025 00:00 (início)
+        // e 1 hora após o evento (eventDate + 1h).
+        const popupStart = new Date('December 25, 2025 00:00:00 GMT-0300').getTime();
+        const popupEnd = eventDate + (1 * 60 * 60 * 1000); // 1 hora após o evento
+        const now = new Date().getTime();
+
+        // Atualiza o ano/título do popup dinamicamente (ex: 2026)
+        const popupYearSpan = eventPopup.querySelector('.nav-event-2025');
+        if (popupYearSpan) {
+            const eventYear = new Date(eventDate).getUTCFullYear();
+            popupYearSpan.textContent = String(eventYear);
         }
+
+        const showPopup = () => {
+            // Evita mostrar múltiplas vezes na mesma sessão
+            if (sessionStorage.getItem('eventPopupShown')) return;
+            eventPopup.style.display = 'flex';
+            sessionStorage.setItem('eventPopupShown', 'true');
+        };
+
+        // Se estivermos dentro da janela desejada, mostrar após pequeno delay
+        if (now >= popupStart && now <= popupEnd) {
+            // Se o evento já ocorreu, ajustar a mensagem do popup
+            if (now > eventDate) {
+                const p = eventPopup.querySelector('p');
+                if (p) p.textContent = 'O evento já aconteceu — confira as novidades e lançamentos na nossa página!';
+                const cta = eventPopup.querySelector('.cta-button');
+                if (cta) cta.textContent = 'Ver Novidades';
+            }
+
+            // mostrar com atraso curto para não incomodar o carregamento
+            setTimeout(showPopup, 1500);
+        }
+
         const closeEventPopup = () => eventPopup.style.display = 'none';
         eventPopupClose.addEventListener('click', closeEventPopup);
         window.addEventListener('click', (event) => { if (event.target == eventPopup) closeEventPopup(); });
@@ -134,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (countdownTopContainer) {
         
         // --- CONFIGURAÇÕES DO EVENTO ---
-        const eventDate = new Date('September 13, 2025 15:00:00 GMT-0300').getTime();
+    const eventDate = new Date('January 9, 2026 15:00:00 GMT-0300').getTime();
         const gameLink = "https://www.roblox.com/pt/games/74975667191920/Centro-de-eventos";
         
         // --- ELEMENTOS DO TOPO ---
@@ -254,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `DTSTAMP:${toUTCString(new Date())}`,
                 `DTSTART:${toUTCString(eventStart)}`,
                 `DTEND:${toUTCString(eventEnd)}`,
-                'SUMMARY:Konectomi Con 2025',
+                'SUMMARY:Konectomi Con 2026',
                 `DESCRIPTION:${icsDescription}`,
                 `LOCATION:${gameLink}`,
                 'END:VEVENT', 'END:VCALENDAR'
@@ -262,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'konectomi-con-2025.ics';
+            link.download = 'konectomi-con-2026.ics';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

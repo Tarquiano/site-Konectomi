@@ -451,3 +451,277 @@ section { padding: 100px 0; overflow: hidden; }
     .timer-label { font-size: 0.7rem; }
     .event-details-content { flex-direction: column; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================== */
+/* === ESTILOS DA PÁGINA DE REGISTRO           === */
+/* ============================================== */
+
+.registro-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('../assets/videos/hero-video.mp4') no-repeat center center/cover; /* Fallback */
+    position: relative;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.registro-page::before {
+    content: '';
+    position: fixed; /* Usa fixed para cobrir toda a viewport */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../assets/videos/hero-video.mp4') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -2;
+}
+
+.registro-page-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(15, 15, 30, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+#registro-modal {
+    background-color: var(--branco-base);
+    color: var(--preto-suave);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+    animation: slideIn 0.5s ease;
+}
+
+.registro-modal-content {
+    padding: 30px 40px;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+.modal-header .logo { font-size: 1.2rem; }
+.modal-header .logo img { height: 30px; }
+.modal-header .logo-text-gradient { background: var(--gradiente-opcional); -webkit-background-clip: text; color: transparent; }
+
+.progress-bar {
+    display: flex;
+    gap: 10px;
+}
+.progress-step {
+    width: 12px;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+    transition: background-color 0.4s ease;
+}
+.progress-step.is-active {
+    background-color: var(--roxo-konectomi);
+}
+
+.form-step {
+    display: none;
+}
+.form-step.is-active {
+    display: block;
+    animation: fadeInStep 0.5s ease;
+}
+@keyframes fadeInStep {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+#step-2, #step-3 { text-align: center; }
+
+#step-2 h2, #step-3 h2 { margin-bottom: 20px; }
+
+.step-description {
+    color: #555;
+    margin: -10px 0 25px;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label, .form-group legend {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: var(--roxo-konectomi);
+    box-shadow: 0 0 0 3px rgba(130, 56, 156, 0.2);
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.radio-group label, .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.link-button {
+    background: none;
+    border: none;
+    color: var(--roxo-konectomi);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 10px 0;
+}
+#extra-questions {
+    border-left: 3px solid var(--cinza-claro);
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+#step-3 .form-actions { justify-content: center; }
+
+.secondary-button {
+    padding: 12px 30px;
+    background: transparent;
+    color: var(--preto-suave);
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.secondary-button:hover {
+    background-color: var(--cinza-claro);
+}
+
+.error-message {
+    color: var(--vermelho-evento);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+}
+.form-group.is-invalid .error-message {
+    display: block;
+}
+.form-group.is-invalid input,
+.form-group.is-invalid fieldset {
+    border-color: var(--vermelho-evento);
+}
+.form-group.is-invalid fieldset {
+    border: 1px solid var(--vermelho-evento);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* --- Etapa de Confirmação & Sucesso --- */
+.loader {
+    border: 5px solid var(--cinza-claro);
+    border-top: 5px solid var(--roxo-konectomi);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 40px auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+#confirmation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    animation: fadeInHero 0.5s ease;
+}
+#roblox-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+#roblox-display-name { font-size: 1.5rem; margin: 0; }
+#roblox-user-handle { font-size: 1rem; color: #666; margin-bottom: 15px; }
+.confirmation-question { font-weight: 600; }
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .registro-page { padding: 0; }
+    #registro-modal { max-width: 100%; min-height: 100vh; border-radius: 0; }
+    .registro-modal-content { padding: 20px; }
+    .modal-header { flex-direction: column; gap: 15px; }
+    .form-actions { flex-direction: column-reverse; }
+    .form-actions .cta-button, .form-actions .secondary-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Adicione no final do seu arquivo style.css */
+
+.cta-button:disabled {
+    background: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
