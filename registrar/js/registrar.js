@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const robloxAvatar = document.getElementById('roblox-avatar');
     const robloxDisplayName = document.getElementById('roblox-display-name');
     const robloxUserHandle = document.getElementById('roblox-user-handle');
+    const captchaContainer = document.getElementById('captcha-container');
 
     let currentStep = 1;
+    let turnstileWidgetId = null; // Variável para guardar o ID do widget do CAPTCHA
 
     // --- NAVEGAÇÃO E VALIDAÇÃO ---
     const showStep = (stepNumber) => {
@@ -32,6 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 pStep.classList.add('is-active');
             }
         });
+
+        // Limpa o widget do CAPTCHA se o usuário sair da etapa 2
+        if (currentStep === 2 && stepNumber !== 2 && window.turnstile && turnstileWidgetId) {
+            window.turnstile.remove(turnstileWidgetId);
+            turnstileWidgetId = null;
+        }
+
         currentStep = stepNumber;
     };
 
@@ -40,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = form.querySelector('#email');
         const username = form.querySelector('#roblox-username');
         const interest = form.querySelector('input[name="interest"]:checked');
+        const terms = form.querySelector('#terms-agree');
+        
+        // Regex para validar o nome de usuário do Roblox (letras, números, underline)
+        const usernameRegex = /^[a-zA-Z0-9_]+$/;
 
         // Valida Email
         if (!email.value || !/^\S+@\S+\.\S+$/.test(email.value)) {
@@ -50,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Valida Roblox Username
-        if (!username.value) {
+        if (!username.value || !usernameRegex.test(username.value)) {
             username.parentElement.classList.add('is-invalid');
             isValid = false;
         } else {
@@ -64,6 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             form.querySelector('fieldset').parentElement.classList.remove('is-invalid');
         }
+        
+        // Valida Checkbox de Termos
+        if (!terms.checked) {
+            terms.closest('.form-group').classList.add('is-invalid');
+            isValid = false;
+        } else {
+            terms.closest('.form-group').classList.remove('is-invalid');
+        }
 
         return isValid;
     };
@@ -76,12 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmationContent.style.display = 'none';
         confirmationError.style.display = 'none';
         confirmBtn.style.display = 'none';
-        document.querySelector('.cf-turnstile').style.display = 'none'; // Esconde o captcha
+        captchaContainer.style.display = 'none'; // Esconde o contêiner do captcha
 
         showStep(2);
 
         try {
-            const response = await fetch(`http://localhost:3000/api/roblox/user/${username}`);
+            // SUBSTITUA 'http://localhost:3000' PELA URL DA SUA API EM PRODUÇÃO
+            const response = await fetch(`https:/api.konectomi.com/api/roblox/user/${username}`);
             
             if (!response.ok) {
                 const errorData = await response.json();
@@ -97,7 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 robloxUserHandle.textContent = `@${userData.username}`;
                 confirmationContent.style.display = 'flex';
                 confirmBtn.style.display = 'inline-flex';
-                document.querySelector('.cf-turnstile').style.display = 'block'; // Mostra o captcha
+                captchaContainer.style.display = 'block'; // Mostra o contêiner do captcha
+
+                // Renderiza o CAPTCHA apenas agora que é necessário
+                if (window.turnstile) {
+                    turnstileWidgetId = window.turnstile.render('#captcha-container', {
+                        sitekey: '0x4AAAAAAB4wIo6RcfDm_iHt', // Sua Site Key aqui
+                    });
+                }
+                
             } else {
                 throw new Error(apiResponse.message);
             }
@@ -126,7 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log("Dados a serem enviados:", data);
         
-        const apiEndpoint = 'http://localhost:3000/api/register';
+        // SUBSTITUA 'http://localhost:3000' PELA URL DA SUA API EM PRODUÇÃO
+        const apiEndpoint = 'https://api.konectomi.com/api/register';
 
         try {
             const response = await fetch(apiEndpoint, {
@@ -165,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     confirmBtn.addEventListener('click', () => {
+        // Validação futura do token do captcha pode ser adicionada aqui se necessário
         submitForm();
     });
 

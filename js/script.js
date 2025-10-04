@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     if (hamburger) hamburger.addEventListener('click', () => navMenu.classList.toggle('is-active'));
     if (navLinks) navLinks.forEach(link => link.addEventListener('click', () => {
-        if (navMenu.classList.contains('is-active')) {
-            navMenu.classList.remove('is-active');
+        if (!link.classList.contains('open-legal-popup')) {
+             if (navMenu.classList.contains('is-active')) {
+                 navMenu.classList.remove('is-active');
+             }
         }
     }));
 
@@ -25,6 +27,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, appearOptions);
     if (faders) faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // --- LÓGICA DO POPUP DE TERMOS E PRIVACIDADE ---
+    const legalPopup = document.getElementById('legal-popup');
+    if (legalPopup) {
+        const openLegalPopupButtons = document.querySelectorAll('.open-legal-popup');
+        const closeLegalPopupButton = legalPopup.querySelector('.close-button');
+
+        const openPopup = (e) => {
+            e.preventDefault();
+            legalPopup.style.display = 'flex';
+        };
+
+        const closePopup = () => {
+            legalPopup.style.display = 'none';
+        };
+
+        openLegalPopupButtons.forEach(btn => btn.addEventListener('click', openPopup));
+        closeLegalPopupButton.addEventListener('click', closePopup);
+        window.addEventListener('click', (event) => {
+            if (event.target == legalPopup) {
+                closePopup();
+            }
+        });
+    }
+
+    // --- LÓGICA DO BANNER DE COOKIES ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    if (cookieBanner) {
+        const acceptCookieBtn = document.getElementById('cookie-accept-btn');
+        const getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        };
+        if (!getCookie('konectomi_cookie_consent')) {
+            setTimeout(() => cookieBanner.classList.add('is-visible'), 1500);
+        }
+        acceptCookieBtn.addEventListener('click', () => {
+            const expiryDate = new Date();
+            expiryDate.setDate(expiryDate.getDate() + 365);
+            document.cookie = `konectomi_cookie_consent=true;path=/;expires=${expiryDate.toUTCString()}`;
+            cookieBanner.classList.remove('is-visible');
+        });
+    }
     
     // --- LÓGICA DA PÁGINA PRINCIPAL (INDEX.HTML) ---
     const rotatingText = document.getElementById('rotating-text');
@@ -50,23 +96,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
+    // --- LÓGICA DO MODAL DE JOGOS (CORRIGIDA) ---
     const gameModal = document.getElementById('game-modal');
     if (gameModal) {
         const modalImg = document.getElementById('modal-img');
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-desc');
-        const infoButtons = document.querySelectorAll('.info-button');
+        // CORREÇÃO APLICADA AQUI: Seleciona todos os .info-button sem depender da estrutura do carrossel.
+        const infoButtons = document.querySelectorAll('.info-button'); 
         const gameModalClose = gameModal.querySelector('.close-button');
         const prevArrow = gameModal.querySelector('.carousel-arrow.prev');
         const nextArrow = gameModal.querySelector('.carousel-arrow.next');
         let currentGallery = [];
         let currentImageIndex = 0;
+        
         const updateModalImage = () => {
             if (currentGallery.length > 0) {
                 modalImg.src = currentGallery[currentImageIndex];
                 modalImg.alt = `Imagem ${currentImageIndex + 1} de ${modalTitle.textContent}`;
             }
         };
+
         infoButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const card = button.closest('.game-card');
@@ -89,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 gameModal.style.display = 'flex';
             });
         });
+
         const closeGameModal = () => gameModal.style.display = 'none';
         gameModalClose.addEventListener('click', closeGameModal);
         window.addEventListener('click', (event) => { if (event.target == gameModal) closeGameModal(); });
@@ -96,17 +147,16 @@ document.addEventListener('DOMContentLoaded', () => {
         prevArrow.addEventListener('click', () => { currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length; updateModalImage(); });
     }
 
+    // --- LÓGICA DO POPUP DE EVENTO ---
     const eventPopup = document.getElementById('event-popup');
     if (eventPopup) {
         const eventPopupClose = document.getElementById('event-popup-close');
+        const eventDate = new Date('January 10, 2026 15:00:00 GMT-0300').getTime();
 
-        // Mostrar o popup apenas entre 25 de dezembro de 2025 00:00 (início)
-        // e 1 hora após o evento (eventDate + 1h).
         const popupStart = new Date('December 25, 2025 00:00:00 GMT-0300').getTime();
-        const popupEnd = eventDate + (1 * 60 * 60 * 1000); // 1 hora após o evento
+        const popupEnd = eventDate + (1 * 60 * 60 * 1000); 
         const now = new Date().getTime();
 
-        // Atualiza o ano/título do popup dinamicamente (ex: 2026)
         const popupYearSpan = eventPopup.querySelector('.nav-event-2025');
         if (popupYearSpan) {
             const eventYear = new Date(eventDate).getUTCFullYear();
@@ -114,23 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const showPopup = () => {
-            // Evita mostrar múltiplas vezes na mesma sessão
             if (sessionStorage.getItem('eventPopupShown')) return;
             eventPopup.style.display = 'flex';
             sessionStorage.setItem('eventPopupShown', 'true');
         };
 
-        // Se estivermos dentro da janela desejada, mostrar após pequeno delay
         if (now >= popupStart && now <= popupEnd) {
-            // Se o evento já ocorreu, ajustar a mensagem do popup
             if (now > eventDate) {
                 const p = eventPopup.querySelector('p');
                 if (p) p.textContent = 'O evento já aconteceu — confira as novidades e lançamentos na nossa página!';
                 const cta = eventPopup.querySelector('.cta-button');
                 if (cta) cta.textContent = 'Ver Novidades';
             }
-
-            // mostrar com atraso curto para não incomodar o carregamento
             setTimeout(showPopup, 1500);
         }
 
@@ -139,34 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('click', (event) => { if (event.target == eventPopup) closeEventPopup(); });
     }
 
-    const cookieBanner = document.getElementById('cookie-banner');
-    if (cookieBanner) {
-        const acceptCookieBtn = document.getElementById('cookie-accept-btn');
-        const getCookie = (name) => {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        };
-        if (!getCookie('konectomi_cookie_consent')) {
-            setTimeout(() => cookieBanner.classList.add('is-visible'), 1500);
-        }
-        acceptCookieBtn.addEventListener('click', () => {
-            const expiryDate = new Date();
-            expiryDate.setDate(expiryDate.getDate() + 365);
-            document.cookie = `konectomi_cookie_consent=true;path=/;expires=${expiryDate.toUTCString()}`;
-            cookieBanner.classList.remove('is-visible');
-        });
-    }
-
     // --- LÓGICA DA PÁGINA DO EVENTO (KONECTOMICON.HTML) ---
     const countdownTopContainer = document.getElementById('countdown-container');
     if (countdownTopContainer) {
         
-        // --- CONFIGURAÇÕES DO EVENTO ---
-    const eventDate = new Date('January 9, 2026 15:00:00 GMT-0300').getTime();
+        const eventDate = new Date('January 10, 2026 15:00:00 GMT-0300').getTime();
         const gameLink = "https://www.roblox.com/pt/games/74975667191920/Centro-de-eventos";
         
-        // --- ELEMENTOS DO TOPO ---
         const finishedTopContainer = document.getElementById('countdown-finished-content');
         const timerElements = {
             days: document.getElementById('days'),
@@ -175,13 +199,13 @@ document.addEventListener('DOMContentLoaded', () => {
             seconds: document.getElementById('seconds')
         };
         
-        // --- ELEMENTOS DE BAIXO (DUPLICADOS) ---
         const countdownBottomContainer = document.getElementById('countdown-container-bottom');
         const finishedBottomContainer = document.getElementById('countdown-finished-content-bottom');
 
         let countdownInterval;
 
         const updateTimerDisplay = (element, newValue) => {
+            if (!element) return;
             const oldValue = element.textContent;
             if (newValue === oldValue) return;
             element.classList.add('is-changing');
@@ -199,13 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (distance < earlyAccessTime) {
                 if (countdownInterval) clearInterval(countdownInterval);
                 
-                // Esconde os timers e botões de calendário
                 countdownTopContainer.style.display = 'none';
-                countdownBottomContainer.style.display = 'none';
+                if(countdownBottomContainer) countdownBottomContainer.style.display = 'none';
 
-                // Mostra os botões de "Acessar Jogo"
                 finishedTopContainer.style.display = 'block';
-                finishedBottomContainer.style.display = 'block';
+                if(finishedBottomContainer) finishedBottomContainer.style.display = 'block';
 
                 if (distance < 0) {
                     finishedTopContainer.querySelector('.countdown-title').textContent = 'O EVENTO COMEÇOU!';
@@ -231,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const initCountdownAnimation = async () => {
             const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
             const animateUnit = async (element, finalValue) => {
+                if (!element) return;
                 let i = 0;
                 const slotInterval = setInterval(() => {
                     const randomValue = Math.floor(Math.random() * 100);
@@ -270,10 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         initCountdownAnimation();
 
-        // --- Lógica do Botão de Calendário (agora para ambos os botões) ---
         const calendarFunction = () => {
             const eventStart = new Date(eventDate);
-            const eventEnd = new Date(eventStart.getTime() + (2 * 60 * 60 * 1000));
+            // MODIFICADO: Duração do evento ajustada para 1 hora
+            const eventEnd = new Date(eventStart.getTime() + (1 * 60 * 60 * 1000));
             const toUTCString = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
             const icsDescription = `O maior evento da Konectomi! Anúncios, lançamentos e muitas surpresas. Não perca!\\n\\nAcesse o evento aqui: ${gameLink}`;
             

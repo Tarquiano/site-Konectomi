@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=5">
+    <link rel="stylesheet" href="../css/style.css?v=6">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9R7ZQSNZ2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -32,8 +32,8 @@
             </a>
             <div class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="../index.html#inicio">Início</a></li>
-                    <li><a href="../index.html#jogos">Jogos</a></li>
+                    <li><a href="../#inicio">Início</a></li>
+                    <li><a href="../#jogos">Jogos</a></li>
                     <li>
                         <a href="#" class="nav-event-link">
                             <span class="nav-event-konectomi">Konectomi</span>
@@ -41,10 +41,9 @@
                             <span class="nav-event-2025">2026</span>
                         </a>
                     </li>
-                    <li><a href="../index.html#comunidade">Comunidade</a></li>
-                    <li><a href="../index.html#carreiras">Carreiras</a></li>
-                    <li><a href="https://docs.google.com/document/d/15Gqth813QQyTgHP0mtML6a56NdkGXRkiyHXGRo4BItI/edit?usp=sharing"
-                            target="_blank">Termos</a></li>
+                    <li><a href="../#comunidade">Comunidade</a></li>
+                    <li><a href="../#carreiras">Carreiras</a></li>
+                    <li><a href="#" class="open-legal-popup">Termos</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <a href="https://app.konectomi.com" class="login-button">Login</a>
@@ -161,11 +160,10 @@
                 <div class="footer-links">
                     <h4>Navegação</h4>
                     <ul>
-                        <li><a href="../index.html#jogos">Jogos</a></li>
-                        <li><a href="https://docs.google.com/document/d/15Gqth813QQyTgHP0mtML6a56NdkGXRkiyHXGRo4BItI/edit?usp=sharing"
-                                target="_blank">Termos e Regras</a></li>
-                        <li><a href="../index.html#learning">Learning</a></li>
-                        <li><a href="../index.html#carreiras">Carreiras</a></li>
+                        <li><a href="../#jogos">Jogos</a></li>
+                        <li><a href="#" class="open-legal-popup">Termos e Regras</a></li>
+                        <li><a href="../#learning">Learning</a></li>
+                        <li><a href="../#carreiras">Carreiras</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -192,8 +190,28 @@
             <button id="ics-popup-ok-btn" class="cta-button">Entendi</button>
         </div>
     </div>
+    
+    <!-- Novo Pop-up de Termos e Privacidade -->
+    <div id="legal-popup" class="modal">
+        <div class="legal-popup-content">
+            <span class="close-button">×</span>
+            <h2>Documentos Importantes</h2>
+            <p>Para garantir um ambiente seguro e transparente, por favor, leia nossos documentos.</p>
+            <div class="legal-popup-buttons">
+                <a href="/termos.html" target="_blank" class="cta-button">Ver Termos e Regras</a>
+                <a href="/privacidade.html" target="_blank" class="cta-button secondary">Ver Política de Privacidade</a>
+            </div>
+        </div>
+    </div>
 
-    <script src="../js/script.js"></script>
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner">
+        <p>Nós usamos cookies para garantir que você tenha a melhor experiência em nosso site. Ao continuar, você
+            concorda com nosso uso e com nossa <a href="../privacidade.html" target="_blank">Política de Privacidade</a>.</p>
+        <button id="cookie-accept-btn">Entendi</button>
+    </div>
+
+    <script src="../js/script.js?v=4"></script>
 
 </body>
 

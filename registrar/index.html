@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css?v=6">
 
-    <!-- SCRIPT DO CLOUDFLARE TURNSTILE (CAPTCHA) -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
@@ -35,10 +34,9 @@
             </div>
 
             <form id="registro-form" novalidate>
-                <!-- ETAPA 1: INFORMAÇÕES BÁSICAS -->
                 <div class="form-step is-active" id="step-1">
                     <h2>Junte-se à KRC</h2>
-                    <p class="step-description">Preencha os dados abaixo para iniciar seu cadastro na comunidade.</p>
+                    <p class="step-description">Este é um formulário de <strong>pré-cadastro</strong>. Suas informações serão analisadas por nossa equipe.</p>
 
                     <div class="form-group">
                         <label for="email">E-mail</label>
@@ -48,9 +46,10 @@
 
                     <div class="form-group">
                         <label for="roblox-username">Qual o seu nome de usuário no Roblox?</label>
-                        <input type="text" id="roblox-username" name="roblox-username" placeholder="@nomedeusuario"
+                        <input type="text" id="roblox-username" name="roblox-username" placeholder="nomedeusuario"
                             required>
-                        <small class="error-message">O nome de usuário do Roblox é obrigatório.</small>
+                        <small class="helper-text">Use apenas letras, números e underline (_). Não inclua o @.</small>
+                        <small class="error-message">Nome de usuário inválido. Verifique as regras acima.</small>
                     </div>
 
                     <div class="form-group">
@@ -97,12 +96,19 @@
                         </div>
                     </div>
 
+                    <div class="form-group terms-group">
+                        <label>
+                            <input type="checkbox" id="terms-agree" name="terms-agree" required>
+                            <span>Li e concordo com os <a href="../termos.html" target="_blank">Termos e Regras</a> e com a <a href="../privacidade.html" target="_blank">Política de Privacidade</a> da Konectomi.</span>
+                        </label>
+                        <small class="error-message">Você precisa concordar com os termos para continuar.</small>
+                    </div>
+
                     <div class="form-actions">
                         <button type="button" class="cta-button" id="next-btn-step1">Próximo</button>
                     </div>
                 </div>
 
-                <!-- ETAPA 2: CONFIRMAÇÃO ROBLOX -->
                 <div class="form-step" id="step-2">
                     <h2>Confirmação de Identidade</h2>
                     <div id="confirmation-loader" class="loader"></div>
@@ -118,28 +124,32 @@
                     <div class="form-actions" style="justify-content: space-between; align-items: center;">
                         <button type="button" class="secondary-button" id="prev-btn-step2">Voltar</button>
 
-                        <!-- WIDGET DO CAPTCHA -->
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAB4wIo6RcfDm_iHt"></div>
+                        <div id="captcha-container"></div>
                         
                         <button type="button" class="cta-button" id="confirm-btn">Sim, sou eu</button>
                     </div>
                 </div>
 
-                <!-- ETAPA 3: SUCESSO -->
                 <div class="form-step" id="step-3">
                     <img src="../assets/icons/check-circle.svg" alt="Sucesso" class="success-icon">
                     <h2>Pré-cadastro realizado!</h2>
-                    <p>Ótimo! Recebemos suas informações. Sua solicitação será analisada e, se aprovada, você receberá um e-mail com os próximos passos em até <strong>dois dias úteis</strong>.</p>
+                    <p>Ótimo! Recebemos suas informações. Sua solicitação será analisada e você receberá o resultado por e-mail no dia <strong>9 de Janeiro de 2026</strong>, data do nosso evento Konectomi Con!</p>
                     <p>Fique de olho na sua caixa de entrada (e na de spam)!</p>
                     <div class="form-actions">
-                        <a href="../" class="cta-button">Voltar para o Início</a>
+                        <a href="../konectomicon2026" class="cta-button">Conheça o Evento</a>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    
+    <div id="cookie-banner">
+        <p>Nós usamos cookies para garantir que você tenha a melhor experiência em nosso site. Ao continuar, você
+            concorda com nosso uso e com nossa <a href="../privacidade.html" target="_blank">Política de Privacidade</a>.</p>
+        <button id="cookie-accept-btn">Entendi</button>
+    </div>
 
     <script src="js/registrar.js"></script>
-</body>
+    <script src="../js/script.js"></script> </body>
 
 </html>
