@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos - Konectomi Roleplay Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIAVEIS E ESTILOS GLOBAIS --- */
+        :root {
+            --gradiente-azul: linear-gradient(135deg, #B5E0F7, #7FB2E7);
+            --roxo-konectomi: #82389C;
+            --roxo-claro: #A855F7;
+            --gradiente-verde: linear-gradient(135deg, #00F41C, #2DB796);
+            --gradiente-opcional: linear-gradient(135deg, #1DA1F2, #6C63FF);
+            --gradiente-roxo-azul: linear-gradient(135deg, #82389C, #7FB2E7);
+            --vermelho-evento: #F44336;
+            --branco-base: #FFFBFF;
+            --preto-suave: #1a1a2e;
+            --cinza-claro: #f4f4f8;
+            --font-principal: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-principal);
+            background-color: var(--cinza-claro);
+            color: var(--preto-suave);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER / NAVBAR SIMPLIFICADA */
+        .doc-header {
+            background-color: var(--branco-base);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .doc-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--roxo-konectomi);
+            text-decoration: none;
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .docs-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .docs-title {
+            font-size: 2.5rem;
+            color: var(--roxo-konectomi);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .docs-subtitle {
+            margin-bottom: 50px;
+            color: #666;
+        }
+
+        /* GRID DE DOCUMENTOS */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .doc-card {
+            background: var(--branco-base);
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: var(--preto-suave);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(130, 56, 156, 0.15);
+            border-color: var(--roxo-claro);
+        }
+
+        .doc-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            background-color: var(--cinza-claro);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--roxo-konectomi);
+        }
+
+        .doc-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .doc-card p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Botão Voltar */
+        .back-button-fixed {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--branco-base);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: var(--preto-suave);
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .back-button-fixed:hover {
+            transform: translateX(-3px);
+            color: var(--roxo-konectomi);
+        }
+
+        @media (max-width: 768px) {
+            .docs-title {
+                font-size: 2rem;
+            }
+
+            .back-button-fixed {
+                top: 15px;
+                left: 15px;
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="back-button-fixed">← Voltar ao Site</a>
+
+    <header class="doc-header">
+        <a href="index.html" class="doc-logo">Konectomi</a>
+    </header>
+
+    <main class="docs-container">
+        <h1 class="docs-title">Central de Documentos</h1>
+        <p class="docs-subtitle">Acesso rápido a todos os termos, regras e diretrizes da nossa comunidade.</p>
+
+        <div class="docs-grid">
+            <a href="termos.html" class="doc-card">
+                <div class="doc-icon"><img src="assets/icons/file-description.svg" alt="Ícone de Documento" width="24"
+                        height="24"></div>
+                <h3>Termos e Regras</h3>
+                <p>Diretrizes gerais de convivência e uso.</p>
+            </a>
+
+            <a href="privacidade.html" class="doc-card">
+                <div class="doc-icon"><img src="assets/icons/lock.svg" alt="Ícone de Cadeado" width="24" height="24">
+                </div>
+                <h3>Política de Privacidade</h3>
+                <p>Como cuidamos dos seus dados.</p>
+            </a>
+
+            <a href="manualCargos.html" class="doc-card">
+                <div class="doc-icon"><img src="assets/icons/checklist.svg" alt="Ícone de Checklist" width="24"
+                        height="24"></div>
+                <h3>Manual de Cargos</h3>
+                <p>Estrutura organizacional e funções.</p>
+            </a>
+
+            <a href="colaboracao.html" class="doc-card">
+                <div class="doc-icon"><img src="assets/icons/team.svg" alt="Ícone de Time" width="24" height="24"></div>
+                <h3>Termo de Colaboração</h3>
+                <p>Regras para voluntários e staff.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #999; font-size: 0.8rem;">
+        <p>© 2026 Konectomi. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

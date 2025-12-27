@@ -151,9 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const eventPopup = document.getElementById('event-popup');
     if (eventPopup) {
         const eventPopupClose = document.getElementById('event-popup-close');
-        const eventDate = new Date('January 10, 2026 15:00:00 GMT-0300').getTime();
+        const eventDate = new Date('July 11, 2026 15:00:00 GMT-0300').getTime();
 
-        const popupStart = new Date('December 25, 2025 00:00:00 GMT-0300').getTime();
+        const popupStart = new Date('June 11, 2026 00:00:00 GMT-0300').getTime();
         const popupEnd = eventDate + (1 * 60 * 60 * 1000); 
         const now = new Date().getTime();
 
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownTopContainer = document.getElementById('countdown-container');
     if (countdownTopContainer) {
         
-        const eventDate = new Date('January 10, 2026 15:00:00 GMT-0300').getTime();
+        const eventDate = new Date('July 11, 2026 15:00:00 GMT-0300').getTime();
         const gameLink = "https://www.roblox.com/pt/games/74975667191920/Centro-de-eventos";
         
         const finishedTopContainer = document.getElementById('countdown-finished-content');

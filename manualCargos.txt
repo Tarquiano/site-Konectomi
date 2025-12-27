@@ -1,0 +1,255 @@
+Manual de Cargos da Konectomi
+
+Konectomi Roleplay Community
+
+Documento institucional destinado a apresentar a estrutura organizacional da Konectomi, descrevendo cargos, responsabilidades e formas de atuação dentro da comunidade.
+
+1. Estrutura Organizacional Geral
+
+A Konectomi opera com duas equipes distintas, porém complementares:
+
+Equipe Frontstage
+
+Equipe Backstage
+
+Ambas possuem a mesma hierarquia de cargos, mas com finalidades e formas de atuação diferentes. Uma mesma pessoa pode, se autorizado, atuar simultaneamente no Frontstage e no Backstage.
+
+Todos os cargos descritos neste manual são exercidos de forma voluntária, conforme os termos institucionais da Konectomi.
+
+2. Equipe Frontstage
+2.1 Finalidade do Frontstage
+
+A Equipe Frontstage atua diretamente nos jogos e eventos da Konectomi, sendo responsável pela interação com jogadores, moderação in-game e operação das atividades ao vivo.
+
+Sua atuação é visível à comunidade e essencial para a experiência de roleplay.
+
+2.2 Staff Frontstage
+
+O Staff Frontstage é o primeiro nível de atuação dentro da equipe Frontstage.
+
+Responsabilidades principais:
+
+Atuar diretamente nos jogos e eventos oficiais
+
+Auxiliar jogadores e orientar a comunidade
+
+Garantir o cumprimento das regras durante o roleplay
+
+Apoiar a organização básica dos eventos
+
+Manter postura respeitosa e alinhada aos valores da Konectomi
+
+O Staff Frontstage não possui sub-cargos e atua conforme orientações da Supervisão Frontstage.
+
+2.3 Supervisão Frontstage
+
+A Supervisão Frontstage tem como função apoiar e orientar o Staff Frontstage durante eventos e atividades in-game.
+
+Responsabilidades principais:
+
+Auxiliar staffs durante eventos
+
+Orientar condutas e boas práticas
+
+Ajudar na resolução de conflitos simples
+
+Avaliar o desempenho geral dos staffs
+
+Atuar como ponto de apoio operacional
+
+A Supervisão Frontstage não analisa faltas, presenças ou justificativas formais.
+
+2.4 Coordenação Frontstage
+
+A Coordenação Frontstage possui função organizacional e administrativa dentro do ambiente de jogo.
+
+Responsabilidades principais:
+
+Organizar eventos e operações in-game
+
+Analisar presença e justificativas
+
+Aplicar medidas administrativas como kick ou server lock quando necessário
+
+Avaliar desempenho da Supervisão Frontstage
+
+Garantir o bom funcionamento operacional dos eventos
+
+A Coordenação Frontstage atua como elo entre a Supervisão e a Diretoria.
+
+2.5 Diretoria Frontstage
+
+A Diretoria Frontstage atua em nível estratégico e de supervisão geral.
+
+Responsabilidades principais:
+
+Acompanhar relatórios de eventos
+
+Analisar dados gerais de funcionamento do Frontstage
+
+Definir diretrizes e ajustes operacionais
+
+Avaliar a Coordenação Frontstage
+
+Tomar decisões institucionais quando necessário
+
+A Diretoria Frontstage não atua rotineiramente em eventos.
+
+3. Equipe Backstage
+3.1 Finalidade do Backstage
+
+A Equipe Backstage atua fora dos jogos, focada em organização interna, tarefas, sistemas, conteúdo e suporte estrutural da Konectomi.
+
+Seu funcionamento é baseado em tarefas organizadas por meio de um sistema Kanban adaptado à comunidade.
+
+3.2 Staff Backstage
+
+O Staff Backstage executa tarefas operacionais atribuídas dentro do Kanban, conforme seu sub-cargo.
+
+Responsabilidades gerais:
+
+Executar tarefas designadas
+
+Cumprir prazos acordados
+
+Comunicar dificuldades ou bloqueios
+
+Atuar de forma colaborativa
+
+Sub-cargos do Staff Backstage
+
+Os sub-cargos servem apenas para definir o tipo de tarefa executada e não representam hierarquia.
+
+Staff Backstage Tester
+
+Testar sistemas, jogos e funcionalidades
+
+Reportar bugs, falhas e sugestões
+
+Staff Backstage Designer
+
+Criar peças visuais
+
+Apoiar identidade visual e materiais gráficos
+
+Staff Backstage Geral
+
+Auxiliar em tarefas diversas
+
+Apoio organizacional e administrativo leve
+
+Staff Backstage Divulgação
+
+Divulgação orgânica da Konectomi
+
+Conversar com pessoas e apresentar a comunidade
+
+Atuar sem spam ou publicidade paga
+
+3.3 Supervisão Backstage
+
+A Supervisão Backstage atua como suporte direto ao Staff Backstage.
+
+Responsabilidades principais:
+
+Acompanhar andamento das tarefas
+
+Auxiliar na organização do fluxo de trabalho
+
+Remover bloqueios operacionais
+
+Apoiar o uso do Kanban
+
+Avaliar desempenho dos staffs
+
+A Supervisão Backstage não analisa faltas nem justificativas formais.
+
+3.4 Coordenação Backstage
+
+A Coordenação Backstage é responsável pela organização e controle do funcionamento do Backstage.
+
+Responsabilidades principais:
+
+Definir tarefas e prioridades
+
+Gerenciar o Kanban
+
+Avaliar entregas e desempenho
+
+Analisar faltas e justificativas
+
+Ajustar fluxos e processos
+
+Avaliar a Supervisão Backstage
+
+3.5 Diretoria Backstage
+
+A Diretoria Backstage atua em nível estratégico e institucional.
+
+Responsabilidades principais:
+
+Definir diretrizes gerais do Backstage
+
+Avaliar a Coordenação Backstage
+
+Revisar processos internos
+
+Propor melhorias estruturais
+
+Alinhar o Backstage aos objetivos da Konectomi
+
+A Diretoria Backstage não executa tarefas operacionais rotineiras.
+
+4. Avaliação e Reconhecimento
+
+A Konectomi adota um processo interno de avaliação contínua, baseado em colaboração, feedback e melhoria.
+
+Fluxo geral de avaliação:
+
+Staff é avaliado pela Supervisão
+
+Supervisão é avaliada pelo Staff e Coordenação
+
+Coordenação é avaliada pela Supervisão e Diretoria
+
+Diretoria é avaliada pela Coordenação
+
+A atuação nos cargos pode gerar reconhecimento institucional, benefícios internos e oportunidades de crescimento dentro da comunidade, conforme critérios e decisões da Direção.
+
+5. Considerações Finais
+
+Este manual tem caráter organizacional e informativo.
+As funções aqui descritas não configuram vínculo empregatício e podem ser ajustadas conforme a evolução da comunidade.
+
+A Konectomi valoriza a colaboração voluntária, o respeito e o crescimento coletivo.
+
+Konectomi Roleplay Community
+A Direção
+
+Documento institucional para publicação no site oficial da Konectomi.
+
+
+GEMINI LE ARQUI POR FAVORRRRRRRRRRRRRR AQUI!!!!
+
+
+Criar um organograma visual utilizando HTML, CSS e JavaScript, sem uso de imagens.
+
+O organograma deve representar duas equipes paralelas:
+
+Equipe Frontstage
+Equipe Backstage
+
+Cada equipe deve apresentar a mesma hierarquia de cargos, em ordem vertical:
+
+Staff
+Supervisão
+Coordenação
+Diretoria
+
+As duas colunas devem ser visualmente separadas, mas com o mesmo peso hierárquico.
+
+O organograma é apenas informativo e não representa vínculo empregatício.
+
+Utilizar as cores, tipografia e variáveis já existentes no CSS da Konectomi.
+
+O layout deve ser responsivo e de fácil leitura.

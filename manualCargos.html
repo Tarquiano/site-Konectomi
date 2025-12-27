@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Cargos - Konectomi Roleplay Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIAVEIS E ESTILOS GLOBAIS --- */
+        :root {
+            --roxo-konectomi: #82389C;
+            --roxo-claro: #A855F7;
+            --branco-base: #FFFBFF;
+            --preto-suave: #1a1a2e;
+            --cinza-claro: #f4f4f8;
+            --cinza-borda: #e0e0e0;
+            --font-principal: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-principal);
+            background-color: var(--cinza-claro);
+            color: var(--preto-suave);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- CONTAINER PRINCIPAL --- */
+        .legal-container {
+            max-width: 900px;
+            margin: 80px auto 60px;
+            /* Margem superior maior para não bater no botão voltar */
+            padding: 50px;
+            background-color: var(--branco-base);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* --- TIPOGRAFIA --- */
+        .legal-container h1 {
+            text-align: center;
+            color: var(--roxo-konectomi);
+            margin-top: 0;
+            margin-bottom: 1.5em;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .legal-container h2 {
+            color: var(--roxo-konectomi);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--cinza-claro);
+            padding-bottom: 10px;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+
+        .legal-container h3 {
+            color: var(--roxo-konectomi);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        .legal-container h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--preto-suave);
+            margin-top: 1.2em;
+        }
+
+        .legal-container p,
+        .legal-container li {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        .legal-container ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5em;
+        }
+
+        .legal-container ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 0.8em;
+        }
+
+        .legal-container ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--roxo-konectomi);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+
+        /* --- LINKS E DESTAQUES --- */
+        .legal-container strong {
+            font-weight: 700;
+            color: var(--roxo-konectomi);
+        }
+
+        .legal-container a {
+            color: var(--roxo-claro);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .legal-container a:hover {
+            color: var(--roxo-konectomi);
+            text-decoration: underline;
+        }
+
+        /* --- RODAPÉ DO DOCUMENTO --- */
+        .document-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--cinza-borda);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- BOTÃO VOLTAR --- */
+        .back-button-container {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 1000;
+        }
+
+        .btn-voltar {
+            background: var(--roxo-konectomi);
+            color: var(--branco-base);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(130, 56, 156, 0.3);
+            text-decoration: none !important;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+
+        .btn-voltar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(130, 56, 156, 0.4);
+            background-color: var(--roxo-claro);
+        }
+
+        /* --- RESPONSIVIDADE (MOBILE) --- */
+        @media (max-width: 768px) {
+            body {
+                background-color: var(--branco-base);
+            }
+
+            .legal-container {
+                margin: 70px 0 0 0;
+                padding: 30px 20px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .legal-container h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1em;
+            }
+
+            .legal-container h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5em;
+            }
+
+            .legal-container h3 {
+                font-size: 1.15rem;
+            }
+
+            .legal-container p,
+            .legal-container li {
+                text-align: left;
+                /* Justificado pode ficar ruim no mobile */
+                font-size: 0.95rem;
+            }
+
+            /* Ajuste do botão voltar no mobile */
+            .back-button-container {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+            }
+
+            .btn-voltar {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .org-column::before {
+                display: none;
+            }
+        }
+
+        /* --- ORGANOGRAMA (RESTAURADO) --- */
+        .organograma-wrapper {
+            margin: 60px 0;
+        }
+
+        .organograma-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--roxo-konectomi);
+            font-weight: 800;
+        }
+
+        .organograma-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .org-column {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        .org-column::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            left: 50%;
+            width: 4px;
+            background: var(--cinza-claro);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .org-header {
+            text-align: center;
+            background: var(--roxo-konectomi);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            z-index: 1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .org-card {
+            background: white;
+            border: 2px solid var(--roxo-konectomi);
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            z-index: 1;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .org-card:hover {
+            transform: scale(1.02);
+        }
+
+        .org-card.diretoria {
+            background: #E1BEE7;
+            border-color: #8E24AA;
+        }
+
+        .org-card.coordenacao {
+            background: #D1C4E9;
+            border-color: #5E35B1;
+        }
+
+        .org-card.supervisao {
+            background: #BBDEFB;
+            border-color: #1E88E5;
+        }
+
+        .org-card.staff {
+            background: #C8E6C9;
+            border-color: #43A047;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="back-button-container">
+        <a href="index.html" class="btn-voltar">← Voltar ao Início</a>
+    </div>
+
+    <main class="legal-container">
+        <h1>Manual de Cargos da Konectomi</h1>
+        <p>Documento institucional destinado a apresentar a estrutura organizacional da Konectomi, descrevendo cargos,
+            responsabilidades e formas de atuação dentro da comunidade.</p>
+
+        <!-- ORGANOGRAMA VISUAL -->
+        <div class="organograma-wrapper">
+            <h2 class="organograma-title">Estrutura Organizacional</h2>
+            <div class="organograma-container">
+                <!-- Coluna Frontstage -->
+                <div class="org-column">
+                    <div class="org-header">Equipe Frontstage</div>
+                    <div class="org-card diretoria">Diretoria Frontstage</div>
+                    <div class="org-card coordenacao">Coordenação Frontstage</div>
+                    <div class="org-card supervisao">Supervisão Frontstage</div>
+                    <div class="org-card staff">Staff Frontstage</div>
+                </div>
+                <!-- Coluna Backstage -->
+                <div class="org-column">
+                    <div class="org-header">Equipe Backstage</div>
+                    <div class="org-card diretoria">Diretoria Backstage</div>
+                    <div class="org-card coordenacao">Coordenação Backstage</div>
+                    <div class="org-card supervisao">Supervisão Backstage</div>
+                    <div class="org-card staff">Staff Backstage<br><span
+                            style="font-size:0.8em; font-weight:400">(Tester, Designer, Geral, Divulgação)</span></div>
+                </div>
+            </div>
+            <p style="text-align:center; font-size:0.8rem; color:#777; margin-top:20px;">* O organograma é apenas
+                informativo e não representa vínculo empregatício.</p>
+        </div>
+
+        <h2>1. Estrutura Organizacional Geral</h2>
+        <p>A Konectomi opera com duas equipes distintas, porém complementares: <strong>Equipe Frontstage</strong> e
+            <strong>Equipe Backstage</strong>.
+        </p>
+        <p>Ambas possuem a mesma hierarquia de cargos, mas com finalidades e formas de atuação diferentes. Uma mesma
+            pessoa pode, se autorizado, atuar simultaneamente no Frontstage e no Backstage.</p>
+        <p>Todos os cargos descritos neste manual são exercidos de forma voluntária, conforme os termos institucionais
+            da Konectomi.</p>
+
+        <h2>2. Equipe Frontstage</h2>
+        <h3>2.1 Finalidade do Frontstage</h3>
+        <p>A Equipe Frontstage atua diretamente nos jogos e eventos da Konectomi, sendo responsável pela interação com
+            jogadores, moderação in-game e operação das atividades ao vivo. Sua atuação é visível à comunidade e
+            essencial para a experiência de roleplay.</p>
+
+        <h3>2.2 Staff Frontstage</h3>
+        <p>O Staff Frontstage é o primeiro nível de atuação dentro da equipe Frontstage.</p>
+        <p><strong>Responsabilidades principais:</strong></p>
+        <ul>
+            <li>Atuar diretamente nos jogos e eventos oficiais</li>
+            <li>Auxiliar jogadores e orientar a comunidade</li>
+            <li>Garantir o cumprimento das regras durante o roleplay</li>
+            <li>Apoiar a organização básica dos eventos</li>
+            <li>Manter postura respeitosa e alinhada aos valores da Konectomi</li>
+        </ul>
+        <p>O Staff Frontstage não possui sub-cargos e atua conforme orientações da Supervisão Frontstage.</p>
+
+        <h3>2.3 Supervisão Frontstage</h3>
+        <p>A Supervisão Frontstage tem como função apoiar e orientar o Staff Frontstage durante eventos e atividades
+            in-game.</p>
+        <p><strong>Responsabilidades principais:</strong></p>
+        <ul>
+            <li>Auxiliar staffs durante eventos</li>
+            <li>Orientar condutas e boas práticas</li>
+            <li>Ajudar na resolução de conflitos simples</li>
+            <li>Avaliar o desempenho geral dos staffs</li>
+            <li>Atuar como ponto de apoio operacional</li>
+        </ul>
+        <p>A Supervisão Frontstage não analisa faltas, presenças ou justificativas formais.</p>
+
+        <h3>2.4 Coordenação Frontstage</h3>
+        <p>A Coordenação Frontstage possui função organizacional e administrativa dentro do ambiente de jogo.</p>
+        <p><strong>Responsabilidades principais:</strong></p>
+        <ul>
+            <li>Organizar eventos e operações in-game</li>
+            <li>Analisar presença e justificativas</li>
+            <li>Aplicar medidas administrativas como kick ou server lock quando necessário</li>
+            <li>Avaliar desempenho da Supervisão Frontstage</li>
+            <li>Garantir o bom funcionamento operacional dos eventos</li>
+        </ul>
+        <p>A Coordenação Frontstage atua como elo entre a Supervisão e a Diretoria.</p>
+
+        <h3>2.5 Diretoria Frontstage</h3>
+        <p>A Diretoria Frontstage atua em nível estratégico e de supervisão geral.</p>
+        <p><strong>Responsabilidades principais:</strong></p>
+        <ul>
+            <li>Acompanhar relatórios de eventos</li>
+            <li>Analisar dados gerais de funcionamento do Frontstage</li>
+            <li>Definir diretrizes e ajustes operacionais</li>
+            <li>Avaliar a Coordenação Frontstage</li>
+            <li>Tomar decisões institucionais quando necessário</li>
+        </ul>
+        <p>A Diretoria Frontstage não atua rotineiramente em eventos.</p>
+
+
+        <h2>3. Equipe Backstage</h2>
+        <h3>3.1 Finalidade do Backstage</h3>
+        <p>A Equipe Backstage atua fora dos jogos, focada em organização interna, tarefas, sistemas, conteúdo e suporte
+            estrutural da Konectomi.</p>
+        <p>Seu funcionamento é baseado em tarefas organizadas por meio de um sistema Kanban adaptado à comunidade.</p>
+
+        <h3>3.2 Staff Backstage</h3>
+        <p>O Staff Backstage executa tarefas operacionais atribuídas dentro do Kanban, conforme seu sub-cargo.</p>
+        <p><strong>Responsabilidades gerais:</strong></p>
+        <ul>
+            <li>Executar tarefas designadas</li>
+            <li>Cumprir prazos acordados</li>
+            <li>Comunicar dificuldades ou bloqueios</li>
+            <li>Atuar de forma colaborativa</li>
+        </ul>
+
+        <h4>Sub-cargos do Staff Backstage</h4>
+        <p>Os sub-cargos servem apenas para definir o tipo de tarefa executada e não representam hierarquia.</p>
+        <ul>
+            <li><strong>Staff Backstage Tester:</strong> Testar sistemas, jogos e funcionalidades; Reportar bugs, falhas
+                e sugestões.</li>
+            <li><strong>Staff Backstage Designer:</strong> Criar peças visuais; Apoiar identidade visual e materiais
+                gráficos.</li>
+            <li><strong>Staff Backstage Geral:</strong> Auxiliar em tarefas diversas; Apoio organizacional e
+                administrativo leve.</li>
+            <li><strong>Staff Backstage Divulgação:</strong> Divulgação orgânica da Konectomi; Conversar com pessoas e
+                apresentar a comunidade (sem spam ou publicidade paga).</li>
+        </ul>
+
+        <h3>3.3 Supervisão Backstage</h3>
+        <p>A Supervisão Backstage atua como suporte direto ao Staff Backstage.</p>
+        <p><strong>Responsabilidades principais:</strong></p>
+        <ul>
+            <li>Acompanhar andamento das tarefas</li>
+            <li>Auxiliar na organização do fluxo de trabalho</li>
+            <li>Remover bloqueios operacionais</li>
+            <li>Apoiar o uso do Kanban</li>
+            <li>Avaliar desempenho dos staffs</li>
+        </ul>
+        <p>A Supervisão Backstage não analisa faltas nem justificativas formais.</p>
+
+        <h3>3.4 Coordenação Backstage</h3>
+        <p>A Coordenação Backstage é responsável pela organização e controle do funcionamento do Backstage.</p>
+        <p><strong>Responsabilidades principais:</strong></p>
+        <ul>
+            <li>Definir tarefas e prioridades</li>
+            <li>Gerenciar o Kanban</li>
+            <li>Avaliar entregas e desempenho</li>
+            <li>Analisar faltas e justificativas</li>
+            <li>Ajustar fluxos e processos</li>
+            <li>Avaliar a Supervisão Backstage</li>
+        </ul>
+
+        <h3>3.5 Diretoria Backstage</h3>
+        <p>A Diretoria Backstage atua em nível estratégico e institucional.</p>
+        <p><strong>Responsabilidades principais:</strong></p>
+        <ul>
+            <li>Definir diretrizes gerais do Backstage</li>
+            <li>Avaliar a Coordenação Backstage</li>
+            <li>Revisar processos internos</li>
+            <li>Propor melhorias estruturais</li>
+            <li>Alinhar o Backstage aos objetivos da Konectomi</li>
+        </ul>
+        <p>A Diretoria Backstage não executa tarefas operacionais rotineiras.</p>
+
+        <h2>4. Avaliação e Reconhecimento</h2>
+        <p>A Konectomi adota um processo interno de avaliação contínua, baseado em colaboração, feedback e melhoria.</p>
+        <p><strong>Fluxo geral de avaliação:</strong></p>
+        <ul>
+            <li>Staff é avaliado pela Supervisão</li>
+            <li>Supervisão é avaliada pelo Staff e Coordenação</li>
+            <li>Coordenação é avaliada pela Supervisão e Diretoria</li>
+            <li>Diretoria é avaliada pela Coordenação</li>
+        </ul>
+        <p>A atuação nos cargos pode gerar reconhecimento institucional, benefícios internos e oportunidades de
+            crescimento dentro da comunidade, conforme critérios e decisões da Direção.</p>
+
+        <h2>5. Considerações Finais</h2>
+        <p>Este manual tem caráter organizacional e informativo. As funções aqui descritas não configuram vínculo
+            empregatício e podem ser ajustadas conforme a evolução da comunidade.</p>
+        <p>A Konectomi valoriza a colaboração voluntária, o respeito e o crescimento coletivo.</p>
+
+        <footer class="document-footer">
+            <p><strong>Konectomi Roleplay Community – A Direção</strong></p>
+            <p>Documento atualizado em: 27/12/2025</p>
+            <p>Canais oficiais: <a href="https://konectomi.com" target="_blank"
+                    rel="noopener noreferrer">konectomi.com</a> | <a
+                    href="mailto:suporte@konectomi.com">suporte@konectomi.com</a></p>
+        </footer>
+    </main>
+
+</body>
+
+</html>

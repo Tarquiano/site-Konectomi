@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo de Colaboração Voluntária - Konectomi Roleplay Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIAVEIS E ESTILOS GLOBAIS --- */
+        :root {
+            --roxo-konectomi: #82389C;
+            --roxo-claro: #A855F7;
+            --branco-base: #FFFBFF;
+            --preto-suave: #1a1a2e;
+            --cinza-claro: #f4f4f8;
+            --cinza-borda: #e0e0e0;
+            --font-principal: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-principal);
+            background-color: var(--cinza-claro);
+            color: var(--preto-suave);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- CONTAINER PRINCIPAL --- */
+        .legal-container {
+            max-width: 900px;
+            margin: 80px auto 60px;
+            /* Margem superior maior para não bater no botão voltar */
+            padding: 50px;
+            background-color: var(--branco-base);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* --- TIPOGRAFIA --- */
+        .legal-container h1 {
+            text-align: center;
+            color: var(--roxo-konectomi);
+            margin-top: 0;
+            margin-bottom: 1.5em;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .legal-container h2 {
+            color: var(--roxo-konectomi);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--cinza-claro);
+            padding-bottom: 10px;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+
+        .legal-container h3 {
+            color: var(--roxo-konectomi);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        .legal-container p,
+        .legal-container li {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        .legal-container ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5em;
+        }
+
+        .legal-container ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 0.8em;
+        }
+
+        .legal-container ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--roxo-konectomi);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+
+        /* --- LINKS E DESTAQUES --- */
+        .legal-container strong {
+            font-weight: 700;
+            color: var(--roxo-konectomi);
+        }
+
+        .legal-container a {
+            color: var(--roxo-claro);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .legal-container a:hover {
+            color: var(--roxo-konectomi);
+            text-decoration: underline;
+        }
+
+        /* --- RODAPÉ DO DOCUMENTO --- */
+        .document-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--cinza-borda);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- BOTÃO VOLTAR --- */
+        .back-button-container {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 1000;
+        }
+
+        .btn-voltar {
+            background: var(--roxo-konectomi);
+            color: var(--branco-base);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(130, 56, 156, 0.3);
+            text-decoration: none !important;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+
+        .btn-voltar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(130, 56, 156, 0.4);
+            background-color: var(--roxo-claro);
+        }
+
+        /* --- RESPONSIVIDADE (MOBILE) --- */
+        @media (max-width: 768px) {
+            body {
+                background-color: var(--branco-base);
+            }
+
+            .legal-container {
+                margin: 70px 0 0 0;
+                padding: 30px 20px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .legal-container h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1em;
+            }
+
+            .legal-container h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5em;
+            }
+
+            .legal-container h3 {
+                font-size: 1.15rem;
+            }
+
+            .legal-container p,
+            .legal-container li {
+                text-align: left;
+                /* Justificado pode ficar ruim no mobile */
+                font-size: 0.95rem;
+            }
+
+            /* Ajuste do botão voltar no mobile */
+            .back-button-container {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+            }
+
+            .btn-voltar {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-button-container">
+        <a href="index.html" class="btn-voltar">← Voltar ao Início</a>
+    </div>
+
+    <main class="legal-container">
+        <h1>Termo de Colaboração Voluntária da Konectomi</h1>
+
+        <h2>Introdução</h2>
+        <p>Este Termo de Colaboração Voluntária regula a participação de colaboradores na Konectomi, seja em atividades
+            in-game (FrontStage) ou em atividades internas, administrativas e de sistemas (Backstage).</p>
+        <p>Ao aceitar este termo, o colaborador declara ciência e concordância com as regras aqui descritas, bem como
+            com o Termo Geral da Konectomi Roleplay Community (KRC) e demais políticas aplicáveis.</p>
+
+        <h2>I. Natureza da Colaboração</h2>
+        <h3>1.1. Colaboração Voluntária</h3>
+        <p>A participação na Konectomi ocorre de forma voluntária, sem qualquer tipo de vínculo empregatício, contratual
+            ou prestação de serviços formais.</p>
+        <p>Não há garantia de remuneração, benefícios, estabilidade ou obrigação de carga horária fixa.</p>
+
+        <h3>1.2. Ausência de Vínculo Empregatício</h3>
+        <p>Este termo não cria relação de emprego, sociedade, associação comercial ou obrigação trabalhista entre o
+            colaborador e a Konectomi.</p>
+        <p>A atuação ocorre exclusivamente em ambiente virtual, comunitário e de roleplay.</p>
+
+        <h2>II. Ambientes de Atuação</h2>
+        <h3>2.1. FrontStage</h3>
+        <p>Atuação voltada à operação visível da comunidade, incluindo jogos, eventos, interação com jogadores e suporte
+            in-game, conforme o cargo ocupado.</p>
+
+        <h3>2.2. Backstage</h3>
+        <p>Atuação voltada a atividades internas, como organização, sistemas, planejamento, comunicação interna,
+            documentação e apoio institucional, sem interação direta obrigatória com jogadores.</p>
+
+        <h3>2.3. Acúmulo de Atividades</h3>
+        <p>Um colaborador pode atuar em mais de um ambiente, desde que respeite os limites definidos pela coordenação e
+            mantenha conduta adequada em todas as frentes.</p>
+
+        <h2>III. Compromisso e Responsabilidade</h2>
+        <h3>3.1. Assunção de Função</h3>
+        <p>Ao aceitar um cargo ou função, o colaborador compromete-se a:</p>
+        <ul>
+            <li>agir com responsabilidade</li>
+            <li>respeitar as regras institucionais</li>
+            <li>cumprir as atividades que assumir de forma consciente</li>
+        </ul>
+        <p>A colaboração é voluntária, mas os compromissos assumidos devem ser respeitados.</p>
+
+        <h3>3.2. Comunicação e Organização</h3>
+        <p>O colaborador deve manter comunicação mínima com sua liderança direta, informando: ausências relevantes,
+            dificuldades recorrentes ou impossibilidade temporária de atuação.</p>
+
+        <h2>IV. Eventos, Frequência e Ausências</h2>
+        <h3>4.1. Participação em Eventos</h3>
+        <p>Quando aplicável ao cargo ou função, o colaborador deve respeitar as regras de frequência definidas no Termo
+            Geral da KRC.</p>
+
+        <h3>4.2. Falta Abonada</h3>
+        <p>O colaborador poderá solicitar falta abonada quando não puder comparecer a um evento ou atividade
+            obrigatória, desde que apresente justificativa válida. A justificativa será analisada pela supervisão,
+            coordenação ou direção.</p>
+
+        <h3>4.3. Limites da Falta Abonada</h3>
+        <p>A falta abonada não é considerada ausência injustificada e pode ser aceita especialmente quando o colaborador
+            estiver envolvido em outras atividades oficiais da Konectomi. No entanto, não garante permanência automática
+            em cargos, funções ou acessos.</p>
+        <p>A recorrência de faltas, mesmo abonadas, poderá resultar em medidas administrativas caso seja identificado
+            comprometimento insuficiente.</p>
+
+        <h2>V. Conduta e Ética</h2>
+        <h3>5.1. Postura Institucional</h3>
+        <p>Todo colaborador deve manter postura respeitosa, ética e alinhada aos valores da Konectomi, tanto em
+            ambientes internos quanto externos quando estiver representando a comunidade.</p>
+
+        <h3>5.2. Uso de Permissões e Acessos</h3>
+        <p>É proibido:</p>
+        <ul>
+            <li>utilizar permissões para benefício próprio</li>
+            <li>favorecer terceiros indevidamente</li>
+            <li>abusar de acessos administrativos</li>
+            <li>utilizar sistemas internos fora do escopo autorizado</li>
+        </ul>
+        <p>Infrações poderão resultar em desligamento imediato da função.</p>
+
+        <h2>VI. Sistemas Internos e Confidencialidade</h2>
+        <h3>6.1. Uso de Sistemas</h3>
+        <p>O acesso a sistemas internos (painéis, e-mail institucional, chat interno, Kanban, logs) é concedido conforme
+            a função exercida. O uso deve ser responsável e restrito às atividades da Konectomi.</p>
+
+        <h3>6.2. Confidencialidade</h3>
+        <p>Informações internas, dados de sistemas, planejamentos e discussões administrativas não devem ser
+            compartilhados fora dos ambientes autorizados. O descumprimento desta cláusula poderá resultar em
+            desligamento imediato e outras medidas cabíveis.</p>
+
+        <h2>VII. Desligamento da Colaboração</h2>
+        <h3>7.1. Desligamento Voluntário</h3>
+        <p>O colaborador pode deixar sua função a qualquer momento, de forma livre, sem necessidade de justificativa
+            formal.</p>
+
+        <h3>7.2. Desligamento Administrativo</h3>
+        <p>A Konectomi poderá encerrar a colaboração a qualquer momento, especialmente em casos de: descumprimento de
+            regras, conduta inadequada, uso indevido de permissões, falta de comprometimento recorrente ou quebra de
+            confiança.</p>
+
+        <h2>VIII. Alterações do Termo</h2>
+        <h3>8.1. Atualizações</h3>
+        <p>Este termo poderá ser alterado a qualquer momento. As atualizações serão comunicadas pelos canais oficiais da
+            Konectomi.</p>
+        <p>A continuidade da colaboração implica aceitação das versões atualizadas.</p>
+
+        <h2>IX. Aceite</h2>
+        <p>Ao aceitar ou continuar exercendo qualquer função na Konectomi, o colaborador declara estar de acordo com
+            este Termo de Colaboração Voluntária, bem como com o Termo Geral da KRC e demais políticas aplicáveis.</p>
+
+        <footer class="document-footer">
+            <p><strong>Konectomi Roleplay Community – A Direção</strong></p>
+            <p>Documento atualizado em: 27/12/2025</p>
+            <p>Canais oficiais: <a href="https://konectomi.com" target="_blank"
+                    rel="noopener noreferrer">konectomi.com</a> | <a
+                    href="mailto:suporte@konectomi.com">suporte@konectomi.com</a></p>
+        </footer>
+    </main>
+
+</body>
+
+</html>
