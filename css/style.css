@@ -253,7 +253,7 @@ section { padding: 100px 0; overflow: hidden; }
 .event-hero {
     height: 100vh;
     min-height: 700px;
-    background: url('../assets/images/event-banner.jpg') no-repeat center center/cover;
+    background: url('../assets/images/event-banner.png') no-repeat center center/cover;
     position: relative;
     display: flex;
     flex-direction: column;

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página Não Encontrada | Konectomi</title>
+    <meta name="description" content="Página não encontrada.">
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9R7ZQSNZ2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-T9R7ZQSNZ2');
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css?v=10">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <style>
+        /* Specific styles for 404 page content */
+        .error-page-content {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            /* Adjust for fixed header */
+            padding-bottom: 60px;
+        }
+
+        .error-page-content h1 {
+            color: var(--roxo-konectomi);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .error-page-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Ensure navbar links are visible against potential dark backgrounds if reused, 
+           but here we have white background so standard styles apply. */
+
+        /* Force dark background on header for 404 page so links are visible */
+        .main-header {
+            background-color: var(--preto-suave);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="/" class="logo">
+                <img src="/assets/icons/favicon.svg" alt="Logo Konectomi">
+                <span class="logo-text-gradient">Konectomi</span>
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/#jogos">Jogos</a></li>
+                    <li>
+                        <a href="/konectomiCon2026" class="nav-event-link">
+                            <span class="nav-event-konectomi">Konectomi</span>
+                            <span class="nav-event-con">Con</span>
+                            <span class="nav-event-2025">2026</span>
+                        </a>
+                    </li>
+                    <li><a href="/#comunidade">Comunidade</a></li>
+                    <li><a href="/#carreiras">Carreiras</a></li>
+                    <li><a href="/documentos.html">Termos</a></li>
+                </ul>
+                <div class="nav-auth-buttons">
+                    <a href="https://app.konectomi.com" class="login-button">Login</a>
+                    <a href="/registrar/" class="signup-button">Criar Conta</a>
+                </div>
+            </div>
+            <button class="hamburger-button" aria-label="Abrir menu">
+                <img src="/assets/icons/menu-hamburger.svg" alt="Menu">
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="error-page-content fade-in visible">
+            <dotlottie-player src="https://lottie.host/deb0265b-b344-4ca7-8c43-11fffee9e0a8/wcuedpx79u.lottie"
+                background="transparent" speed="1" style="width: 300px; height: 300px; margin: 0 auto;" loop autoplay>
+            </dotlottie-player>
+            <h1>Ops! Página não encontrada</h1>
+            <p>A página que você está procurando não existe ou foi movida.</p>
+            <a href="/" class="cta-button">Voltar ao Início</a>
+        </div>
+    </main>
+
+    <footer class="main-footer-bottom">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Konectomi</h3>
+                    <p>Mais que um jogo, uma comunidade viva.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="/#jogos">Jogos</a></li>
+                        <li><a href="/documentos.html">Termos e Regras</a></li>
+                        <li><a href="/#learning">Learning</a></li>
+                        <li><a href="/#carreiras">Carreiras</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Links socias</h4>
+                    <a href="https://discord.gg/6nvHRPY5ap" target="_blank" aria-label="Discord"><img
+                            src="/assets/icons/discord.svg" alt="Discord"></a>
+                    <a href="https://www.instagram.com/konectomi/" target="_blank" aria-label="Instagram"><img
+                            src="/assets/icons/instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2026 Konectomi. Todos os direitos reservados. Não somos afiliados à Roblox Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js?v=6"></script>
+</body>
+
+</html>
