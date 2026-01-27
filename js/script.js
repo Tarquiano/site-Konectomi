@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger) hamburger.addEventListener('click', () => navMenu.classList.toggle('is-active'));
     if (navLinks) navLinks.forEach(link => link.addEventListener('click', () => {
         if (!link.classList.contains('open-legal-popup')) {
-             if (navMenu.classList.contains('is-active')) {
-                 navMenu.classList.remove('is-active');
-             }
+            if (navMenu.classList.contains('is-active')) {
+                navMenu.classList.remove('is-active');
+            }
         }
     }));
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cookieBanner.classList.remove('is-visible');
         });
     }
-    
+
     // --- LÓGICA DA PÁGINA PRINCIPAL (INDEX.HTML) ---
     const rotatingText = document.getElementById('rotating-text');
     if (rotatingText) {
@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-desc');
         // CORREÇÃO APLICADA AQUI: Seleciona todos os .info-button sem depender da estrutura do carrossel.
-        const infoButtons = document.querySelectorAll('.info-button'); 
+        const infoButtons = document.querySelectorAll('.info-button');
         const gameModalClose = gameModal.querySelector('.close-button');
         const prevArrow = gameModal.querySelector('.carousel-arrow.prev');
         const nextArrow = gameModal.querySelector('.carousel-arrow.next');
         let currentGallery = [];
         let currentImageIndex = 0;
-        
+
         const updateModalImage = () => {
             if (currentGallery.length > 0) {
                 modalImg.src = currentGallery[currentImageIndex];
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const eventDate = new Date('July 11, 2026 15:00:00 GMT-0300').getTime();
 
         const popupStart = new Date('June 11, 2026 00:00:00 GMT-0300').getTime();
-        const popupEnd = eventDate + (1 * 60 * 60 * 1000); 
+        const popupEnd = eventDate + (1 * 60 * 60 * 1000);
         const now = new Date().getTime();
 
         const popupYearSpan = eventPopup.querySelector('.nav-event-2025');
@@ -187,10 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LÓGICA DA PÁGINA DO EVENTO (KONECTOMICON.HTML) ---
     const countdownTopContainer = document.getElementById('countdown-container');
     if (countdownTopContainer) {
-        
+
         const eventDate = new Date('July 11, 2026 15:00:00 GMT-0300').getTime();
         const gameLink = "https://www.roblox.com/pt/games/74975667191920/Centro-de-eventos";
-        
+
         const finishedTopContainer = document.getElementById('countdown-finished-content');
         const timerElements = {
             days: document.getElementById('days'),
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
             minutes: document.getElementById('minutes'),
             seconds: document.getElementById('seconds')
         };
-        
+
         const countdownBottomContainer = document.getElementById('countdown-container-bottom');
         const finishedBottomContainer = document.getElementById('countdown-finished-content-bottom');
 
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 element.textContent = newValue;
                 element.classList.remove('is-changing');
-            }, 400); 
+            }, 400);
         };
 
         const runCountdown = () => {
@@ -222,12 +222,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const earlyAccessTime = 30 * 60 * 1000;
             if (distance < earlyAccessTime) {
                 if (countdownInterval) clearInterval(countdownInterval);
-                
+
                 countdownTopContainer.style.display = 'none';
-                if(countdownBottomContainer) countdownBottomContainer.style.display = 'none';
+                if (countdownBottomContainer) countdownBottomContainer.style.display = 'none';
 
                 finishedTopContainer.style.display = 'block';
-                if(finishedBottomContainer) finishedBottomContainer.style.display = 'block';
+                if (finishedBottomContainer) finishedBottomContainer.style.display = 'block';
 
                 if (distance < 0) {
                     finishedTopContainer.querySelector('.countdown-title').textContent = 'O EVENTO COMEÇOU!';
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const key in finalValues) {
                 finalValues[key] = finalValues[key] < 10 ? '0' + String(finalValues[key]) : String(finalValues[key]);
             }
-            
+
             await animateUnit(timerElements.seconds, finalValues.seconds);
             await sleep(100);
             await animateUnit(timerElements.minutes, finalValues.minutes);
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             countdownInterval = setInterval(runCountdown, 1000);
         };
-        
+
         initCountdownAnimation();
 
         const calendarFunction = () => {
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const eventEnd = new Date(eventStart.getTime() + (1 * 60 * 60 * 1000));
             const toUTCString = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
             const icsDescription = `O maior evento da Konectomi! Anúncios, lançamentos e muitas surpresas. Não perca!\\n\\nAcesse o evento aqui: ${gameLink}`;
-            
+
             const icsContent = [
                 'BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT',
                 `UID:${Date.now()}@konectomi.com`,
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (addToCalendarBtnTop) addToCalendarBtnTop.addEventListener('click', calendarFunction);
         if (addToCalendarBtnBottom) addToCalendarBtnBottom.addEventListener('click', calendarFunction);
-        
+
         const icsPopup = document.getElementById('ics-popup');
         if (icsPopup) {
             const icsPopupClose = document.getElementById('ics-popup-close');
@@ -339,4 +339,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // --- LÓGICA DO MODAL DE SISTEMA INDISPONÍVEL ---
+    const unavailableModal = document.getElementById('unavailable-modal');
+    if (unavailableModal) {
+        const unavailableLinks = document.querySelectorAll('.unavailable-link');
+        const closeBtn = unavailableModal.querySelector('.close-button');
+        const actionBtn = unavailableModal.querySelector('.close-btn-action');
+
+        const openUnavailable = (e) => {
+            e.preventDefault();
+            unavailableModal.style.display = 'flex';
+        };
+        const closeUnavailable = () => {
+            unavailableModal.style.display = 'none';
+        };
+
+        unavailableLinks.forEach(link => link.addEventListener('click', openUnavailable));
+        if (closeBtn) closeBtn.addEventListener('click', closeUnavailable);
+        if (actionBtn) actionBtn.addEventListener('click', closeUnavailable);
+
+        window.addEventListener('click', (event) => {
+            if (event.target == unavailableModal) {
+                closeUnavailable();
+            }
+        });
+    }
+
 });
