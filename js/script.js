@@ -340,22 +340,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- LÓGICA DO MODAL DE SISTEMA INDISPONÍVEL ---
+    // --- LÓGICA DO MODAL DE SISTEMA INDISPONÍVEL E HEALTH CHECK ---
     const unavailableModal = document.getElementById('unavailable-modal');
     if (unavailableModal) {
         const unavailableLinks = document.querySelectorAll('.unavailable-link');
         const closeBtn = unavailableModal.querySelector('.close-button');
         const actionBtn = unavailableModal.querySelector('.close-btn-action');
 
-        const openUnavailable = (e) => {
-            e.preventDefault();
+        const openUnavailable = () => {
             unavailableModal.style.display = 'flex';
         };
+
         const closeUnavailable = () => {
             unavailableModal.style.display = 'none';
         };
 
-        unavailableLinks.forEach(link => link.addEventListener('click', openUnavailable));
+        const checkAppStatus = (targetUrl) => {
+            // Mudar cursor para indicar carregamento
+            document.body.style.cursor = 'wait';
+
+            const img = new Image();
+
+            // Timeout de segurança (caso a imagem nunca carregue nem dê erro)
+            const timer = setTimeout(() => {
+                console.warn('App check timed out');
+                document.body.style.cursor = 'default';
+                openUnavailable();
+            }, 5000);
+
+            img.onload = () => {
+                clearTimeout(timer);
+                window.location.href = targetUrl;
+            };
+
+            img.onerror = () => {
+                clearTimeout(timer);
+                console.warn('App check failed: logo parsing error (likely HTML error page)');
+                document.body.style.cursor = 'default';
+                openUnavailable();
+            };
+
+            // Adiciona timestamp para evitar cache
+            img.src = 'https://app.konectomi.com/images/logo.svg?v=' + new Date().getTime();
+        };
+
+        unavailableLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Determinar URL de destino baseado no botão clicado
+                let targetUrl = 'https://app.konectomi.com/login'; // Default
+                if (link.classList.contains('signup-button') || link.textContent.toLowerCase().includes('ingress') || link.textContent.toLowerCase().includes('criar')) {
+                    targetUrl = 'https://app.konectomi.com/cadastro/novo';
+                }
+
+                checkAppStatus(targetUrl);
+            });
+        });
+
         if (closeBtn) closeBtn.addEventListener('click', closeUnavailable);
         if (actionBtn) actionBtn.addEventListener('click', closeUnavailable);
 
