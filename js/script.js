@@ -398,4 +398,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+
+    // --- LÓGICA DO BOTÃO LER MAIS ---
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const moreText = document.getElementById('more-text');
+
+    if (readMoreBtn && moreText) {
+        readMoreBtn.addEventListener('click', () => {
+            if (moreText.style.display === 'inline') {
+                moreText.style.display = 'none';
+                readMoreBtn.textContent = 'Ler mais';
+            } else {
+                moreText.style.display = 'inline';
+                readMoreBtn.textContent = 'Ler menos';
+            }
+        });
+    }
+
 });

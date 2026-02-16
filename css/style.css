@@ -1673,3 +1673,44 @@ section {
     position: relative;
     z-index: 10;
 }
+
+.about-section p {
+    text-align: left !important;
+    line-height: 1.8;
+}
+
+.hidden-text {
+    display: none;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: 2px solid var(--roxo-konectomi);
+    color: var(--roxo-konectomi);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.read-more-btn:hover {
+    background: var(--roxo-konectomi);
+    color: var(--branco-base);
+}
+
+.about-section p {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 1.25rem !important; /* Maior para melhor leitura */
+    line-height: 1.8;
+    color: #333; /* Contraste */
+}
+
+.highlight-word {
+    color: var(--roxo-konectomi);
+    font-weight: 700;
+}

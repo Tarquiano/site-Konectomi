@@ -10,8 +10,10 @@
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9R7ZQSNZ2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,7 +24,7 @@
     </script>
 
 
-    <link rel="stylesheet" href="css/style.css?v=10"> 
+    <link rel="stylesheet" href="css/style.css?v=10">
 </head>
 
 <body>
@@ -79,11 +81,17 @@
         <section id="sobre" class="about-section">
             <div class="container fade-in">
                 <h2 class="section-title">Sobre a Konectomi</h2>
-                <p>A Konectomi nasceu de um desejo simples: ter um cantinho no Roblox para a galera jogar junto, dar
-                    risada e ficar de boa. Mais do que criar jogos, queremos construir uma comunidade segura e de
-                    respeito, sem aquela toxicidade ou bagunça que a gente vê por aí. Nosso foco é fazer amizades e
-                    viver momentos que marcam. O melhor é que tudo rola ao vivo, com eventos e roleplays guiados por
-                    pessoas de verdade, deixando a experiência muito mais real e divertida.</p>
+                <p>A Konectomi nasceu de um desejo simples: ter um cantinho no <span
+                        class="highlight-word">Roblox</span> para a galera jogar junto, dar
+                    risada e ficar de boa. <span id="more-text" class="hidden-text">Mais do que criar jogos, queremos
+                        construir uma <span class="highlight-word">comunidade segura</span> e de
+                        <span class="highlight-word">respeito</span>, sem aquela toxicidade ou bagunça que a gente vê
+                        por aí. Nosso foco é fazer <span class="highlight-word">amizades</span> e
+                        viver momentos que marcam. O melhor é que tudo rola <span class="highlight-word">ao vivo</span>,
+                        com eventos e <span class="highlight-word">roleplays</span> guiados por
+                        pessoas de verdade, deixando a <span class="highlight-word">experiência</span> muito mais real e
+                        divertida.</span></p>
+                <button id="read-more-btn" class="read-more-btn">Ler mais</button>
             </div>
         </section>
 
@@ -91,7 +99,7 @@
             <div class="container">
                 <h2 class="section-title fade-in">Nossas Experiências</h2>
                 <div class="games-grid fade-in">
-                    
+
                     <div class="game-card" data-game-id="belopavi-airlines" data-image-count="3"
                         data-desc="Voe pelos céus e viaje para vários destinos em uma simulação de aviação completa. Embarque em aventuras pelos ares e descubra novos lugares.">
                         <img src="assets/images/belopavi-airlines_1.png" alt="Belopavi Airlines">
@@ -100,7 +108,7 @@
                                     src="assets/icons/info.svg"></button>
                         </div>
                     </div>
-                    
+
                     <div class="game-card" data-game-id="belopavi-park" data-image-count="3"
                         data-desc="A diversão nunca acaba! Explore um parque com montanhas-russas, brinquedos e atrações para toda a família.">
                         <img src="assets/images/belopavi-park_1.png" alt="Belopavi Park">
@@ -108,7 +116,7 @@
                             <h3>Belopavi Park</h3><button class="info-button"><img src="assets/icons/info.svg"></button>
                         </div>
                     </div>
-                    
+
                     <div class="game-card" data-game-id="belopavi-resort" data-image-count="3"
                         data-desc="Relaxe e aproveite uma estadia de luxo em nosso resort exclusivo. Piscinas, atividades e muito mais esperam por você.">
                         <img src="assets/images/belopavi-resort_1.png" alt="Belopavi Resort">
@@ -117,7 +125,7 @@
                                     src="assets/icons/info.svg"></button>
                         </div>
                     </div>
-                    
+
                     <div class="game-card" data-game-id="belopavi-restaurant" data-image-count="3"
                         data-desc="Uma experiência gastronômica única. Visite o restaurante, peça sanduíches, milkshakes e aproveite bons momentos com os amigos.">
                         <img src="assets/images/belopavi-restaurant_1.png" alt="Belopavi Restaurant">
@@ -126,7 +134,7 @@
                                     src="assets/icons/info.svg"></button>
                         </div>
                     </div>
-                    
+
                     <div class="game-card" data-game-id="kaizen-hikari" data-image-count="3"
                         data-desc="Nossa escola-câmpus, feita para você aprender de um jeito prático e divertido. Cursos de tecnologia, música e muito espaço para criar junto com a galera.">
                         <img src="assets/images/kaizen-hikari_1.png" alt="Kaizen Hikari">
@@ -135,7 +143,7 @@
                                     src="assets/icons/info.svg"></button>
                         </div>
                     </div>
-                    
+
                     <div class="game-card is-placeholder" data-game-id="formula-1" data-image-count="1"
                         data-desc="Velocidade e adrenalina em cada curva. Viva a experiência de pilotar no ritmo acelerado do Belopavi Race.">
                         <img src="assets/images/placeholder-game.png" alt="Fórmula 1">
@@ -311,7 +319,7 @@
         </div>
     </footer>
 
-    
+
     <div id="game-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">×</span>
@@ -325,7 +333,7 @@
         </div>
     </div>
 
-    
+
     <div id="event-popup" class="modal">
         <div class="event-popup-content">
             <span id="event-popup-close" class="close-button">×</span>
@@ -342,7 +350,7 @@
         </div>
     </div>
 
-    
+
     <div id="legal-popup" class="modal">
         <div class="legal-popup-content">
             <span class="close-button">×</span>
@@ -355,7 +363,7 @@
         </div>
     </div>
 
-    
+
     <div id="unavailable-modal" class="modal">
         <div class="modal-content" style="max-width: 400px; text-align: center;">
             <span class="close-button">×</span>
@@ -366,7 +374,7 @@
         </div>
     </div>
 
-    
+
     <div id="cookie-banner">
         <p>Nós usamos cookies para garantir que você tenha a melhor experiência em nosso site. Ao continuar, você
             concorda com nosso uso e com nossa <a href="/privacidade.html" target="_blank">Política de Privacidade</a>.
