@@ -398,4 +398,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+
+    // --- LÓGICA DO BOTÃO LER MAIS ---
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const moreText = document.getElementById('more-text');
+
+    if (readMoreBtn && moreText) {
+        readMoreBtn.addEventListener('click', () => {
+            if (moreText.style.display === 'inline') {
+                moreText.style.display = 'none';
+                readMoreBtn.textContent = 'Ler mais';
+            } else {
+                moreText.style.display = 'inline';
+                readMoreBtn.textContent = 'Ler menos';
+            }
+        });
+    }
+
+    const readMoreBtnTeam = document.getElementById('read-more-btn-team');
+    const moreTextTeam = document.getElementById('more-text-team');
+
+    if (readMoreBtnTeam && moreTextTeam) {
+        readMoreBtnTeam.addEventListener('click', () => {
+            if (moreTextTeam.style.display === 'inline') {
+                moreTextTeam.style.display = 'none';
+                readMoreBtnTeam.textContent = 'Ler mais';
+            } else {
+                moreTextTeam.style.display = 'inline';
+                readMoreBtnTeam.textContent = 'Ler menos';
+            }
+        });
+    }
+
 });
