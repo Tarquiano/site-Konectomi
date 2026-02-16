@@ -1,4 +1,4 @@
-/* --- VARIAVEIS E ESTILOS GLOBAIS --- */
+
 :root {
     --gradiente-azul: linear-gradient(135deg, #B5E0F7, #7FB2E7);
     --roxo-konectomi: #82389C;
@@ -107,7 +107,7 @@ section {
     box-shadow: 0 10px 20px rgba(0, 244, 28, 0.25);
 }
 
-/* --- CABEÇALHO --- */
+
 .main-header {
     position: fixed;
     top: 0;
@@ -273,7 +273,7 @@ section {
     filter: invert(1);
 }
 
-/* --- HERO SECTION --- */
+
 .hero-section {
     height: 100vh;
     display: flex;
@@ -365,7 +365,7 @@ section {
     }
 }
 
-/* --- SEÇÕES --- */
+
 .about-section {
     background-color: var(--cinza-claro);
 }
@@ -586,7 +586,7 @@ section {
     font-weight: 800;
 }
 
-/* --- RODAPÉ --- */
+
 .main-footer-bottom {
     background-color: var(--preto-suave);
     color: var(--branco-base);
@@ -619,28 +619,28 @@ section {
     transition: all 0.3s;
 }
 
-/* Ajustes visuais de proporção */
+
 .footer-social a[aria-label="Discord"] img {
     height: 32px;
 }
 
-/* Aumenta visualmente */
+
 .footer-social a[aria-label="Instagram"] img {
     height: 30px;
 }
 
-/* Aumenta visualmente */
+
 .footer-social a[aria-label="YouTube"] img {
     height: 22px;
 }
 
-/* Reduz o peso do bloco vermelho */
+
 .footer-social a[aria-label="Grupo Roblox"] img,
 .footer-social a[aria-label="Canal WhatsApp"] img {
     height: 26px;
 }
 
-/* Reduz levemente blocos quadrados */
+
 .footer-social a:hover img {
     fill: var(--branco-base);
     color: var(--branco-base);
@@ -655,7 +655,7 @@ section {
     color: #aaa;
 }
 
-/* --- MODAL --- */
+
 .modal {
     position: fixed;
     z-index: 2000;
@@ -766,7 +766,7 @@ section {
     margin-top: 10px;
 }
 
-/* --- POP-UP DO EVENTO --- */
+
 #event-popup {
     z-index: 6000;
 }
@@ -802,7 +802,7 @@ section {
     margin-bottom: 30px;
 }
 
-/* --- MEDIA QUERIES PARA MOBILE --- */
+
 @media (max-width: 992px) {
 
     .learning-content,
@@ -897,7 +897,7 @@ section {
     }
 }
 
-/* --- ESTILO DO BANNER DE COOKIES --- */
+
 #cookie-banner {
     position: fixed;
     bottom: -300px;
@@ -957,9 +957,9 @@ section {
     }
 }
 
-/* ============================================== */
-/* === ESTILOS DA PÁGINA DE EVENTO (KONECTOMICON) === */
-/* ============================================== */
+
+
+
 .event-hero {
     height: 100vh;
     min-height: 700px;
@@ -1185,16 +1185,16 @@ section {
     }
 }
 
-/* ============================================== */
-/* === ESTILOS DA PÁGINA DE REGISTRO           === */
-/* ============================================== */
+
+
+
 .registro-page {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background: url('../assets/videos/hero-video.mp4') no-repeat center center/cover;
-    /* Fallback */
+    
     position: relative;
     overflow-y: auto;
     padding: 20px;
@@ -1523,10 +1523,10 @@ section {
     box-shadow: none;
 }
 
-/* ============================================== */
-/* === ESTILOS ADICIONAIS (VERSÃO 6)           === */
-/* ============================================== */
-/* --- POP-UP DE TERMOS E PRIVACIDADE --- */
+
+
+
+
 .legal-popup-content {
     background: var(--branco-base);
     padding: 40px;
@@ -1572,14 +1572,14 @@ section {
     transform: translateY(-2px);
 }
 
-/* --- BANNER DE COOKIES (AJUSTE) --- */
+
 #cookie-banner a {
     color: #fff;
     text-decoration: underline;
     font-weight: 600;
 }
 
-/* --- FORMULÁRIO DE REGISTRO (AJUSTE CHECKBOX) --- */
+
 .form-group.terms-group {
     margin-top: 25px;
     margin-bottom: 10px;
@@ -1606,4 +1606,70 @@ section {
     color: var(--roxo-konectomi);
     text-decoration: underline;
     font-weight: 600;
+}
+
+.highlight-section {
+    background: var(--preto-suave); 
+    color: var(--branco-base);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.highlight-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradiente-roxo-azul);
+}
+
+.highlight-section .learning-text h2 {
+    color: var(--branco-base); 
+}
+
+.highlight-section .learning-text p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+.community-img {
+    object-fit: contain !important; 
+    background-color: transparent !important; 
+    box-shadow: none !important; 
+    max-height: 400px; 
+    width: 100%;
+}
+
+
+#evento-konectomicon {
+    padding-bottom: 20px; 
+}
+
+#learning {
+    padding-top: 20px; 
+}
+
+
+.learning-title {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.learning-title img {
+    height: 1.2em; 
+    width: auto;
+}
+
+
+.highlight-con {
+    background-color: #fcfaff;
+    border-top: 4px solid var(--roxo-konectomi);
+    box-shadow: 0 10px 30px rgba(130, 56, 156, 0.1);
+    padding: 60px 0;
+    position: relative;
+    z-index: 10;
 }
