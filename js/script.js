@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LÓGICA GERAL (PARA TODAS AS PÁGINAS) ---
     const hamburger = document.querySelector('.hamburger-button');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, appearOptions);
     if (faders) faders.forEach(fader => appearOnScroll.observe(fader));
 
-    // --- LÓGICA DO POPUP DE TERMOS E PRIVACIDADE ---
     const legalPopup = document.getElementById('legal-popup');
     if (legalPopup) {
         const openLegalPopupButtons = document.querySelectorAll('.open-legal-popup');
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA DO BANNER DE COOKIES ---
     const cookieBanner = document.getElementById('cookie-banner');
     if (cookieBanner) {
         const acceptCookieBtn = document.getElementById('cookie-accept-btn');
@@ -72,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA DA PÁGINA PRINCIPAL (INDEX.HTML) ---
     const rotatingText = document.getElementById('rotating-text');
     if (rotatingText) {
         const words = [
@@ -96,13 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // --- LÓGICA DO MODAL DE JOGOS (CORRIGIDA) ---
     const gameModal = document.getElementById('game-modal');
     if (gameModal) {
         const modalImg = document.getElementById('modal-img');
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-desc');
-        // CORREÇÃO APLICADA AQUI: Seleciona todos os .info-button sem depender da estrutura do carrossel.
         const infoButtons = document.querySelectorAll('.info-button');
         const gameModalClose = gameModal.querySelector('.close-button');
         const prevArrow = gameModal.querySelector('.carousel-arrow.prev');
@@ -147,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
         prevArrow.addEventListener('click', () => { currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length; updateModalImage(); });
     }
 
-    // --- LÓGICA DO POPUP DE EVENTO ---
     const eventPopup = document.getElementById('event-popup');
     if (eventPopup) {
         const eventPopupClose = document.getElementById('event-popup-close');
@@ -184,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('click', (event) => { if (event.target == eventPopup) closeEventPopup(); });
     }
 
-    // --- LÓGICA DA PÁGINA DO EVENTO (KONECTOMICON.HTML) ---
     const countdownTopContainer = document.getElementById('countdown-container');
     if (countdownTopContainer) {
 
@@ -295,7 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const calendarFunction = () => {
             const eventStart = new Date(eventDate);
-            // MODIFICADO: Duração do evento ajustada para 1 hora
             const eventEnd = new Date(eventStart.getTime() + (1 * 60 * 60 * 1000));
             const toUTCString = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
             const icsDescription = `O maior evento da Konectomi! Anúncios, lançamentos e muitas surpresas. Não perca!\\n\\nAcesse o evento aqui: ${gameLink}`;
@@ -340,7 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- LÓGICA DO MODAL DE SISTEMA INDISPONÍVEL E HEALTH CHECK ---
     const unavailableModal = document.getElementById('unavailable-modal');
     if (unavailableModal) {
         const unavailableLinks = document.querySelectorAll('.unavailable-link');
@@ -356,12 +346,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const checkAppStatus = (targetUrl) => {
-            // Mudar cursor para indicar carregamento
             document.body.style.cursor = 'wait';
 
             const img = new Image();
 
-            // Timeout de segurança (caso a imagem nunca carregue nem dê erro)
             const timer = setTimeout(() => {
                 console.warn('App check timed out');
                 document.body.style.cursor = 'default';
@@ -380,7 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 openUnavailable();
             };
 
-            // Adiciona timestamp para evitar cache
             img.src = 'https://app.konectomi.com/images/logo.svg?v=' + new Date().getTime();
         };
 
@@ -388,10 +375,13 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                // Determinar URL de destino baseado no botão clicado
-                let targetUrl = 'https://app.konectomi.com/login'; // Default
-                if (link.classList.contains('signup-button') || link.textContent.toLowerCase().includes('ingress') || link.textContent.toLowerCase().includes('criar')) {
-                    targetUrl = 'https://app.konectomi.com/cadastro/novo';
+                let targetUrl = link.getAttribute('data-target');
+
+                if (!targetUrl) {
+                    targetUrl = 'https://app.konectomi.com/login';
+                    if (link.classList.contains('signup-button') || link.textContent.toLowerCase().includes('ingress') || link.textContent.toLowerCase().includes('criar')) {
+                        targetUrl = 'https://app.konectomi.com/cadastro/novo';
+                    }
                 }
 
                 checkAppStatus(targetUrl);
