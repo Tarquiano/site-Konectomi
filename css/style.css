@@ -1,4 +1,3 @@
-
 :root {
     --gradiente-azul: linear-gradient(135deg, #B5E0F7, #7FB2E7);
     --roxo-konectomi: #82389C;
@@ -148,6 +147,7 @@ section {
 .logo-text-gradient {
     background: var(--gradiente-opcional);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
 }
@@ -206,12 +206,14 @@ section {
 .nav-event-konectomi {
     background: var(--gradiente-roxo-azul);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .nav-event-con {
     background: var(--gradiente-verde);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1194,7 +1196,7 @@ section {
     justify-content: center;
     min-height: 100vh;
     background: url('../assets/videos/hero-video.mp4') no-repeat center center/cover;
-    
+
     position: relative;
     overflow-y: auto;
     padding: 20px;
@@ -1609,7 +1611,7 @@ section {
 }
 
 .highlight-section {
-    background: var(--preto-suave); 
+    background: var(--preto-suave);
     color: var(--branco-base);
     position: relative;
     overflow: hidden;
@@ -1627,7 +1629,7 @@ section {
 }
 
 .highlight-section .learning-text h2 {
-    color: var(--branco-base); 
+    color: var(--branco-base);
 }
 
 .highlight-section .learning-text p {
@@ -1636,31 +1638,31 @@ section {
 
 
 .community-img {
-    object-fit: contain !important; 
-    background-color: transparent !important; 
-    box-shadow: none !important; 
-    max-height: 400px; 
+    object-fit: contain !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    max-height: 400px;
     width: 100%;
 }
 
 
 #evento-konectomicon {
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
 }
 
 #learning {
-    padding-top: 20px; 
+    padding-top: 20px;
 }
 
 
 .learning-title {
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .learning-title img {
-    height: 1.2em; 
+    height: 1.2em;
     width: auto;
 }
 
@@ -1705,12 +1707,42 @@ section {
 
 .about-section p {
     font-family: 'Outfit', sans-serif !important;
-    font-size: 1.25rem !important; /* Maior para melhor leitura */
+    font-size: 1.25rem !important;
+    /* Maior para melhor leitura */
     line-height: 1.8;
-    color: #333; /* Contraste */
+    color: #333;
+    /* Contraste */
 }
 
 .highlight-word {
     color: var(--roxo-konectomi);
     font-weight: 700;
+}
+
+.team-text h3 {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--roxo-konectomi), #a855f7, var(--roxo-konectomi));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.animated-title {
+    animation: title-shimmer 3s linear infinite;
+}
+
+@keyframes title-shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.team-text p {
+    font-size: 1.1rem !important;
+    font-family: 'Outfit', sans-serif !important;
+    line-height: 1.7;
+    color: #444;
 }

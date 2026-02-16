@@ -416,4 +416,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const readMoreBtnTeam = document.getElementById('read-more-btn-team');
+    const moreTextTeam = document.getElementById('more-text-team');
+
+    if (readMoreBtnTeam && moreTextTeam) {
+        readMoreBtnTeam.addEventListener('click', () => {
+            if (moreTextTeam.style.display === 'inline') {
+                moreTextTeam.style.display = 'none';
+                readMoreBtnTeam.textContent = 'Ler mais';
+            } else {
+                moreTextTeam.style.display = 'inline';
+                readMoreBtnTeam.textContent = 'Ler menos';
+            }
+        });
+    }
+
 });
