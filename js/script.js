@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const rotatingText = document.getElementById('rotating-text');
     if (rotatingText) {
         const words = [
-            { text: 'Criatividade', class: 'text-gradient-green' },
-            { text: 'Respeito', class: 'text-gradient-blue' },
-            { text: 'Inovação', class: 'text-gradient-purple' },
-            { text: 'Conexão', class: 'text-gradient-green' }
+            { text: 'evolução', class: 'text-gradient-green' },
+            { text: 'criação', class: 'text-gradient-blue' },
+            { text: 'mundo', class: 'text-gradient-purple' },
+            { text: 'comunidade', class: 'text-gradient-green' }
         ];
         let wordIndex = 0;
         setInterval(() => {

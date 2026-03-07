@@ -996,7 +996,7 @@ section {
     position: absolute;
     bottom: 30px;
     left: 50%;
-    transform: translateX(-50%);
+    margin-left: -15px;
     z-index: 3;
     animation: bounce 2s infinite;
 }
@@ -1034,12 +1034,12 @@ section {
 }
 
 .countdown-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255, 251, 255, 0.7);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 #countdown-timer {
@@ -1054,29 +1054,29 @@ section {
 }
 
 .timer-number {
-    font-family: 'Poppins', monospace;
-    font-size: 4rem;
-    font-weight: 800;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px 25px;
-    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
     line-height: 1;
-    min-width: 110px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    min-width: 80px;
+    color: var(--branco-base);
+    transition: opacity 0.3s ease-out;
 }
 
 .timer-number.is-changing {
-    transform: translateY(-100%);
-    opacity: 0;
+    opacity: 0.6;
 }
 
 .timer-label {
-    font-size: 0.9rem;
-    margin-top: 10px;
+    font-size: 0.8rem;
+    margin-top: 8px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1px;
     color: rgba(255, 251, 255, 0.6);
 }
 
@@ -1103,6 +1103,20 @@ section {
 .event-button {
     gap: 12px;
     padding: 15px 30px;
+}
+
+.outline-button {
+    background: transparent;
+    color: var(--roxo-konectomi);
+    border: 2px solid var(--roxo-konectomi);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.outline-button:hover {
+    background: rgba(130, 56, 156, 0.1);
+    transform: translateY(-3px);
+    box-shadow: none;
 }
 
 .event-button img {
@@ -1173,9 +1187,9 @@ section {
     }
 
     .timer-number {
-        font-size: 2.5rem;
-        min-width: 0;
-        padding: 10px 5px;
+        font-size: 2rem;
+        min-width: 60px;
+        padding: 8px 5px;
     }
 
     .timer-label {
@@ -1686,11 +1700,13 @@ section {
 }
 
 .read-more-btn {
+    font-family: inherit;
     background: transparent;
-    border: 2px solid var(--roxo-konectomi);
+    border: 1.5px solid var(--roxo-konectomi);
     color: var(--roxo-konectomi);
-    padding: 8px 20px;
-    border-radius: 20px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
     cursor: pointer;
     font-weight: 600;
     margin-top: 20px;

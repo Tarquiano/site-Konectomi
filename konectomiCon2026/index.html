@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=10">
+    <link rel="stylesheet" href="../css/style.css?v=11">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9R7ZQSNZ2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -33,7 +33,6 @@
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="../#inicio">Início</a></li>
-                    <li><a href="../#jogos">Jogos</a></li>
                     <li>
                         <a href="#" class="nav-event-link">
                             <span class="nav-event-konectomi">Konectomi</span>
@@ -41,8 +40,6 @@
                             <span class="nav-event-2025">2026</span>
                         </a>
                     </li>
-                    <li><a href="../#comunidade">Comunidade</a></li>
-                    <li><a href="../#carreiras">Carreiras</a></li>
                     <li><a href="#" class="open-legal-popup">Termos</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
@@ -65,10 +62,14 @@
                     <span class="nav-event-con">Con</span>
                     <span class="nav-event-2025">2026</span>
                 </h1>
-                <p class="event-subtitle">Uma nova era está chegando. E você faz parte dela.</p>
+                <p class="event-subtitle">Uma nova era está chegando.</p>
 
-                <div id="countdown-container">
-                    <h2 class="countdown-title">O EVENTO COMEÇA EM:</h2>
+                <div id="countdown-container" style="margin-top: 40px;">
+                    <h3 class="countdown-title"
+                        style="font-size: 1.4rem; margin-bottom: 5px; color: var(--branco-base); letter-spacing: 0;">11
+                        de Julho de 2026
+                    </h3>
+                    <h2 class="countdown-title" style="font-size: 1rem; color: #ccc;">O evento começa em</h2>
                     <div id="countdown-timer">
                         <div class="timer-unit">
                             <div id="days" class="timer-number">00</div>
@@ -87,11 +88,10 @@
                             <span class="timer-label">Segundos</span>
                         </div>
                     </div>
-                    <div class="event-actions-wrapper">
-                        <button id="add-to-calendar-btn" class="cta-button event-button">
-                            <img src="../assets/icons/calendar-plus.svg" alt="">
-                            Adicionar ao Calendário
-                        </button>
+                    <div class="event-actions-wrapper" style="text-align: center; margin-top: 30px;">
+                        <a href="#event-details" class="cta-button event-button">
+                            Saiba mais
+                        </a>
                     </div>
                 </div>
 
@@ -117,19 +117,30 @@
                 <div class="event-details-content">
                     <div class="event-details-text">
                         <h2 class="section-title">O que é a Konectomi Con?</h2>
-                        <p>A Konectomi Con é o nosso evento anual, feito para você que acompanha nossos jogos. É 100%
-                            online, gratuito e cheio de surpresas! A gente aproveita para revelar os próximos
-                            lançamentos, conversar com a comunidade e dar uma espiadinha no que está por vir.</p>
-                        <p><strong>Como participar?</strong> É simples: basta ter uma conta no Roblox e entrar no nosso
-                            Centro de Eventos na data e hora marcadas. A entrada será liberada alguns minutos antes do
-                            início. Chegue cedo, garanta seu lugar e viva a experiência com a gente!</p>
+                        <p>A Konectomi Con é o nosso encontro anual com a comunidade.</p>
+                        <p>Um momento para compartilhar ideias, mostrar o que estamos construindo e olhar juntos para o
+                            futuro da Konectomi.</p>
+                        <p>O evento acontece em um auditório virtual dentro do Roblox, com apresentação ao vivo, slides
+                            e anúncios especiais.</p>
+                        <p>É gratuito e aberto a todos.</p>
 
-                        <div id="bottom-actions-container" class="bottom-actions-wrapper">
+                        <h2 class="section-title" style="margin-top: 40px; margin-bottom: 15px;">Como participar</h2>
+                        <ul style="color: var(--preto-suave); list-style: none; padding-left: 0; line-height: 2;">
+                            <li><strong style="color: var(--roxo-konectomi);">1.</strong> Crie sua conta no site</li>
+                            <li><strong style="color: var(--roxo-konectomi);">2.</strong> Escolha seu lugar no auditório
+                            </li>
+                            <li><strong style="color: var(--roxo-konectomi);">3.</strong> Entre no evento no dia e
+                                horário marcados</li>
+                            <li><strong style="color: var(--roxo-konectomi);">4.</strong> Chegue alguns minutos antes e
+                                aproveite a experiência com a comunidade.</li>
+                        </ul>
+
+                        <div id="bottom-actions-container" class="bottom-actions-wrapper" style="margin-top: 30px;">
                             <div id="countdown-container-bottom" class="event-actions-wrapper">
-                                <button id="add-to-calendar-btn-bottom" class="cta-button event-button">
-                                    <img src="../assets/icons/calendar-plus.svg" alt="">
-                                    Adicionar ao Calendário
-                                </button>
+                                <a href="javascript:void(0)" class="cta-button event-button unavailable-link"
+                                    data-target="https://app.konectomi.com/cadastro/novo">
+                                    Garantir lugar no auditório
+                                </a>
                             </div>
 
                             <div id="countdown-finished-content-bottom" class="event-buttons-wrapper"
@@ -162,10 +173,7 @@
                 <div class="footer-links">
                     <h4>Navegação</h4>
                     <ul>
-                        <li><a href="../#jogos">Jogos</a></li>
                         <li><a href="#" class="open-legal-popup">Termos e Regras</a></li>
-                        <li><a href="../#learning">Learning</a></li>
-                        <li><a href="../#carreiras">Carreiras</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -231,7 +239,7 @@
         <button id="cookie-accept-btn">Entendi</button>
     </div>
 
-    <script src="../js/script.js?v=4"></script>
+    <script src="../js/script.js?v=5"></script>
 
 </body>
 
